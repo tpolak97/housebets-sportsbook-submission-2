@@ -178,3 +178,15 @@ html.sidebarHidden body[data-book="6"] .rbCatIcon{width:44px;height:32px}
 html body[data-book="6"] :is(.railDirectory,#rbFly) .rbLeagueLogo:not(.rbLeagueDot){background:#ffffff14!important;border:1px solid #ffffff22;box-shadow:inset 0 1px 0 #ffffff14}
 html body[data-book="6"] :is(.railDirectory,#rbFly) .rbLeagueLogo img{width:18px!important;height:18px!important;filter:drop-shadow(0 0 1px #ffffffd9) drop-shadow(0 0 3px #ffffff40)}
 html body[data-book="6"] :is(.railDirectory,#rbFly) .rbLeagueLogo img{filter:drop-shadow(0 0 .7px #fff) drop-shadow(0 0 .7px #fff) drop-shadow(0 0 4px #ffffff55)}
+
+/* Clearer frames for the home banner, sport rail, and expanded sidebar. */
+html body[data-book="6"] .promoArt{border:2px solid #4c858b;border-radius:16px;box-shadow:inset 0 0 0 1px #d4fff522,0 10px 26px #0006}
+html body[data-book="6"] .sportBar>.allSports,
+html body[data-book="6"] .sportTrack button[data-sport]{border:2px solid #4d8088;box-shadow:inset 0 0 0 1px #ffffff0d,0 3px 10px #0004}
+html body[data-book="6"] .sportBar>.allSports[aria-pressed="true"],
+html body[data-book="6"] .sportTrack button[data-sport][aria-pressed="true"]{border-color:#b4eee4;box-shadow:0 0 0 2px #9fe8d82e,inset 0 0 0 1px #ffffff18}
+html body[data-book="6"] .sportBar>button[aria-label$="sports"]:not(.openDirectory){border-width:2px!important;border-color:#4d8088!important}
+html body[data-book="6"] .rbGroup{border-width:2px;border-color:#3b747a}
+html body[data-book="6"] .rbRow,html body[data-book="6"] .rbCat{border-width:2px;border-color:#345d64}
+html body[data-book="6"] .rbRow:is(:hover,.rbOpen,:has(.rbItem[aria-pressed="true"])),
+html body[data-book="6"] .rbCat:is(:hover,.rbCatOpen){border-color:#9fe8d8;box-shadow:0 0 0 1px #9fe8d826}
