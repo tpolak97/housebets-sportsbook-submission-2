@@ -99,6 +99,12 @@ html body[data-book="6"] .rbCatHead em{min-width:22px;height:18px;padding:0 6px;
 html body[data-book="6"] .rbCatChevron{display:grid!important;place-items:center;color:#9fc7c0}
 html body[data-book="6"] .rbCatChevron svg{width:15px;height:15px;transition:transform .2s ease}
 html body[data-book="6"] .rbCatOpen .rbCatChevron svg{transform:rotate(180deg)}
+/* The Top Sports and Browse dropdowns share one inset chevron control. */
+html body[data-book="6"] .railDirectory .rbExpand,html body[data-book="6"] .railDirectory .rbCatChevron{box-sizing:border-box;display:grid!important;place-items:center;width:28px!important;height:28px!important;border:1px solid #2f5b62!important;border-radius:8px!important;background:#0a1c22!important;color:#9fc7c0!important}
+html body[data-book="6"] .railDirectory .rbExpand{margin:0 8px 0 0!important}
+html body[data-book="6"] .railDirectory .rbCatHead{padding-right:8px!important}
+html body[data-book="6"] .railDirectory .rbCatHead:is(:hover,:focus-visible) .rbCatChevron{border-color:#9fe8d8!important;color:#fff!important}
+html body[data-book="6"] .railDirectory .rbCatChevron svg{width:15px!important;height:15px!important}
 html body[data-book="6"] .rbCatList{display:none;gap:3px;padding:2px 4px 6px}
 html body[data-book="6"] .rbCatOpen .rbCatList{display:grid;animation:rbDrop .18s ease-out}
 html.sidebarHidden body[data-book="6"] .railDirectory .rbCatHead{grid-template-columns:1fr;justify-items:center;width:52px!important;padding:2px!important}
@@ -149,10 +155,10 @@ html body[data-book="6"] #productSidebar .rbRow:hover{background:#143039}
 /* Keep tiles and labels at full strength, but never touch the icon drawings: their animations use opacity
    (motion trails, balls that appear on release), and an !important opacity here froze them visible. */
 html body[data-book="6"] .railDirectory :is(.rbItem,.rbItem>span,.rbItem>svg,.rbCatHead,.rbCatHead>span){opacity:1!important}
-html body[data-book="6"] .railDirectory .rbCatHead{gap:7px;grid-template-columns:40px minmax(0,1fr) auto 18px}
+html body[data-book="6"] .railDirectory .rbCatHead{gap:7px}
 html body[data-book="6"] .railDirectory .rbCatLabel{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px!important}
 html body[data-book="6"] .rbCatHead em{display:none!important}
-html body[data-book="6"] .railDirectory .rbCatHead{grid-template-columns:40px minmax(0,1fr) 18px}
+html body[data-book="6"] .railDirectory .rbCatHead{grid-template-columns:40px minmax(0,1fr) 28px}
 @keyframes rbDrop{from{transform:translateY(-4px)}to{transform:none}}
 /* ---- Flyout v2: pops off the sidebar (lighter teal panel, mint edge and glow), bold name header ---- */
 #rbFly{width:310px;border:1.5px solid #9fe8d8;background:linear-gradient(180deg,#1f4f5a 0%,#173f49 40%,#12333c 100%);box-shadow:0 22px 50px #000c,0 0 0 4px #9fe8d81f,0 0 28px #9fe8d82e}
