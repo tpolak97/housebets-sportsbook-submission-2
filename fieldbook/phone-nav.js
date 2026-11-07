@@ -2,7 +2,7 @@
 /* Phone navigation (≤750px), all submissions.
    - Bottom bar: Menu · Casino · Sports · Live · My bets. Menu slides the full sidebar in from the left (Top sports,
      All sports / esports / racing, league dropdowns); tapping outside or choosing something closes it.
-   - Floating bubbles above the bar, bottom right: support (headset) and, left of it, the bet slip with its pick count.
+   - A full-width bet slip dock sits above the bar, with support alongside it.
    - Header: compact logo and wallet so search, chat and profile all fit (phone-nav.css). */
 {
 const phone = () => matchMedia('(max-width:750px)').matches;
@@ -42,7 +42,7 @@ const bubbles = () => {
   const n = window.betaSinglesCount?.() || (slip ? 1 : 0);
   const alert = slip && {paused: 'Suspended', changed: 'Odds changed', failed: 'Retry'}[mode];
   return '<div class="pnBubbles"><button class="pnSlip' + (n ? ' hasPick' : '') + (alert ? ' alert' : '') + '" aria-label="Bet slip, ' + (n ? n + (n > 1 ? ' selections' : ' selection') : 'empty') + '" onclick="tab=\'Slip\';sheet=true;render()">' +
-    SLIP + (n ? '<b>' + n + '</b>' : '') + '</button>' +
+    SLIP + '<span class="pnSlipLabel">Bet slip' + (alert ? ' · ' + alert : '') + '</span><b>' + n + '</b><span class="pnSlipArrow" aria-hidden="true">⌃</span></button>' +
     '<button class="pnHelp" aria-label="Help and support" onclick="pnSupport()">' + toolbarMark('support') + '</button></div>';
 };
 window.pnSupport = () => {
