@@ -1,0 +1,74 @@
+/* Beta v2 page polish (page-polish.js). */
+/* Live page grid: three columns on desktop; one-match competitions take one column, two-match ones two, three or
+   more the full width. Controls above the list stay full width. */
+@media(min-width:1100px){
+  html body[data-book="6"] #found.liveGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:14px;align-items:start}
+  html body[data-book="6"] #found.liveGrid>:not(.fixtureGroup){grid-column:1/-1}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup{margin:8px 0;grid-template-columns:minmax(0,1fr)}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup[data-n="2"]{grid-column:span 2;grid-template-columns:repeat(2,minmax(0,1fr))}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup[data-n="3"]{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup>header{grid-column:1/-1}
+}
+@media(min-width:751px) and (max-width:1099px){
+  html body[data-book="6"] #found.liveGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px;align-items:start}
+  html body[data-book="6"] #found.liveGrid>:not(.fixtureGroup){grid-column:1/-1}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup{margin:8px 0;grid-template-columns:minmax(0,1fr)}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup:is([data-n="2"],[data-n="3"]){grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup>header{grid-column:1/-1}
+}
+/* Football page (phone): keep "Sports home →" on one line. */
+html body[data-book="6"] a{-webkit-tap-highlight-color:transparent}
+html body[data-book="6"] .footballHeading>a{white-space:nowrap;align-self:start}
+/* My bets empty state */
+html body[data-book="6"] .betsEmpty{display:grid;gap:6px;justify-items:start;margin:14px 0;padding:18px 20px;border:1px dashed #2f5560;border-radius:12px;background:#0c1c22}
+html body[data-book="6"] .betsEmpty b{font-size:17px}
+html body[data-book="6"] .betsEmpty span{color:#9fc7c0;font-size:14px}
+html body[data-book="6"] .betsEmpty div{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+html body[data-book="6"] .betsEmpty a{padding:8px 14px;border-radius:999px;border:1px solid #3d6e75;color:#d9fbf5;font-weight:700;text-decoration:none}
+html body[data-book="6"] .betsEmpty a:first-child{background:#b4eee4;color:#0c2a2e;border-color:#b4eee4}
+/* Live grid headers: one line. Long competition names truncate, the Follow button stays compact, and the
+   "Match result" label is dropped in one-column sections (the odds rows already say what they are). */
+@media(min-width:751px){
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup>header{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;min-width:0}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup>header h2{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup>header button{flex:none;white-space:nowrap}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup>header small{flex:none;white-space:nowrap}
+  html body[data-book="6"] #found.liveGrid>.fixtureGroup[data-n="1"]>header small{display:none}
+}
+/* Suspended prices: the word "Suspended" is longer than a price, so let it shrink to fit narrow three-way rows. */
+html body[data-book="6"] .fixtureRow button[disabled]{min-width:0;overflow:hidden}
+html body[data-book="6"] .fixtureRow button[disabled] b{display:block;font-size:clamp(11px,.95vw,15px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Home featured cards: every club shield the same size. */
+html body[data-book="6"] .snapCard .snapTeams .clubShield{width:20px;height:23px;margin-right:6px}
+/* Help button: icon centred in the circle. */
+html body[data-book="6"] #supportLauncher{display:grid;place-items:center;padding:0;line-height:0}
+html body[data-book="6"] #supportLauncher svg{width:22px;height:22px;display:block;margin:0 auto;transform:translateY(-.5px)}
+/* Home sport block heading: a bold pill, and a Live bubble in place of the "Bet live →" text link. */
+html body[data-book="6"] .slateHeading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0 12px}
+html body[data-book="6"] .slateHeading h2{display:inline-flex;align-items:center;gap:8px;margin:0;padding:9px 18px 9px 16px;border-radius:999px;border:1px solid #2f6b70;background:linear-gradient(180deg,#14343c,#0e252c);box-shadow:inset 0 1px 0 #ffffff14,0 6px 18px #0006;font:800 clamp(18px,1.6vw,22px)/1 Bahnschrift,"Segoe UI",sans-serif;letter-spacing:-.01em;color:#eefcf9}
+html body[data-book="6"] .slateHeading h2::before{content:"";width:8px;height:8px;border-radius:50%;background:#9fe8d8;box-shadow:0 0 0 3px #9fe8d833}
+html body[data-book="6"] .liveBubble{display:inline-flex;align-items:center;gap:7px;padding:7px 14px 7px 10px;border-radius:999px;border:1px solid #6b2a2e;background:linear-gradient(180deg,#2a1418,#1d0f12);color:#ffe3e3;font:700 15px/1 "Segoe UI",sans-serif;text-decoration:none;transition:border-color .15s,background .15s}
+html body[data-book="6"] .liveBubble:is(:hover,:focus-visible){border-color:#ff6b6b;background:linear-gradient(180deg,#3a1a1f,#24111a)}
+html body[data-book="6"] .liveBubble .navMark{width:22px;height:22px}
+html body[data-book="6"] .liveBubble b{min-width:22px;padding:3px 7px;border-radius:999px;background:#ff3b3b;color:#fff;font-size:12px;text-align:center}
+/* Home sections under the heading: a grid, so one-match "Live now" and "Upcoming" sit side by side. */
+html body[data-book="6"] .slateGrid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+html body[data-book="6"] .slateGrid>.fixtureGroup{margin:0}
+@media(min-width:1100px){
+  html body[data-book="6"] .slateGrid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+  html body[data-book="6"] .slateGrid>.fixtureGroup{grid-template-columns:minmax(0,1fr)}
+  html body[data-book="6"] .slateGrid>.fixtureGroup[data-n="2"]{grid-column:span 2;grid-template-columns:repeat(2,minmax(0,1fr))}
+  html body[data-book="6"] .slateGrid>.fixtureGroup[data-n="3"]{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}
+  html body[data-book="6"] .slateGrid>.fixtureGroup>header{grid-column:1/-1}
+}
+@media(min-width:751px) and (max-width:1099px){
+  html body[data-book="6"] .slateGrid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  html body[data-book="6"] .slateGrid>.fixtureGroup{grid-template-columns:minmax(0,1fr)}
+  html body[data-book="6"] .slateGrid>.fixtureGroup:is([data-n="2"],[data-n="3"]){grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}
+  html body[data-book="6"] .slateGrid>.fixtureGroup>header{grid-column:1/-1}
+}
+/* Match header (phone): the live line under the score stays on one compact pill instead of wrapping over the pitch. */
+@media(max-width:750px){
+  html body[data-book="6"] .flightScore>div>div:not(.scoreSide){display:grid;justify-items:center;gap:4px;min-width:0}
+  html body[data-book="6"] .flightScore>div>div:not(.scoreSide)>:not(strong){white-space:nowrap;font-size:10px;line-height:1;padding:4px 7px;border-radius:999px;background:#07121ab3;max-width:44vw;overflow:hidden;text-overflow:ellipsis}
+}

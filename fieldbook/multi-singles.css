@@ -1,0 +1,112 @@
+/* Bet slip (multi-singles.js, beta-polish.js): several singles, each with its own stake. Housebets teal palette:
+   panel #0d2129/#132d36, lines #24464e/#2f5b62, mint #b4eee4/#9fe8d8, text #eefcf9/#9fc7c0. */
+html body[data-book="6"] .deskSlipClose{display:grid;place-items:center;width:34px;height:34px;margin-left:auto;padding:0;border-radius:50%;border:1px solid #2f5b62;background:#0f262e;color:#cfe9ea;cursor:pointer;transition:background .15s,border-color .15s}
+html body[data-book="6"] .deskSlipClose:is(:hover,:focus-visible){background:#183a44;border-color:#9fe8d8;color:#fff}
+html body[data-book="6"] .deskSlipClose svg{width:18px;height:18px}
+html body[data-book="6"] .deskFlyout header .slipKind{margin-left:4px}
+html body[data-book="6"] .slipChevron{display:grid;place-items:center;width:26px;height:26px;margin-left:auto;border-radius:50%;background:#08242a14}
+html body[data-book="6"] .slipChevron svg{width:16px;height:16px}
+.msPanel{display:grid;gap:10px;padding:12px 14px 14px;color:#eefcf9}
+.msHead{display:flex;align-items:center;justify-content:space-between}
+.msHead .slipTag{margin:0}
+.msClearAll{border:0;background:none;color:#9fc7c0;font:600 12px "Segoe UI",sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.msClearAll:hover{color:#eefcf9}
+.msPlaced{padding:9px 12px;border-radius:10px;background:#1d4a3f;border:1px solid #3fae8f;color:#d9fbf5;font-size:13px}
+.msPlaced a{color:#b4eee4;font-weight:700}
+.msList{display:grid;gap:10px}
+.msBet{display:grid;gap:10px;padding:12px;border:1px solid #2f5b62;border-radius:14px;background:#0f262e}
+.msBet.msOff{border-color:#c98a3a}
+.msBet header{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:start;gap:8px;position:static;padding:0;background:none;border:0;backdrop-filter:none}
+.msBet header div{display:grid;gap:3px;min-width:0}
+.msBet header b{font:800 16px/1.2 "Segoe UI",sans-serif;color:#eefcf9}
+.msBet header small{color:#9fc7c0;font-size:12px;line-height:1.3}
+.msLive{color:#ff8a80;font:700 11px "Segoe UI",sans-serif}.msTime{color:#7fa7a9;font-size:11px}
+.msOdds{padding:5px 10px;border-radius:9px;background:#b4eee4;color:#0c2a2e;font:800 15px/1 "Segoe UI",sans-serif}
+.msRemove{display:grid;place-items:center;width:28px;height:28px;padding:0;border-radius:50%;border:1px solid #2f5b62;background:transparent;color:#9fc7c0;cursor:pointer}
+.msRemove:is(:hover,:focus-visible){background:#3a1c22;border-color:#e8735f;color:#fff}
+.msRemove svg{width:14px;height:14px}
+.msWarn{margin:0;padding:7px 10px;border-radius:8px;background:#3a2a12;color:#f3d39b;font-size:12px}
+.msStakeRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end}
+.msStakeRow label{display:flex;align-items:center;gap:6px;padding:0 10px;height:42px;border:1px solid #2f5b62;border-radius:10px;background:#0b1d23}
+.msStakeRow label:focus-within{border-color:#9fe8d8;box-shadow:0 0 0 2px #9fe8d833}
+.msStakeRow label span{color:#9fc7c0;font-size:12px}
+.msStakeRow input{flex:1;min-width:0;border:0;background:none;color:#eefcf9;font:700 16px "Segoe UI",sans-serif;outline:none;text-align:right}
+.msStakeRow em{font-style:normal;color:#7fa7a9;font-size:11px}
+.msReturnRow{display:grid;justify-items:end;gap:2px}
+.msReturnRow span{color:#9fc7c0;font-size:11px}
+.msReturnRow b{color:#9fe8d8;font:800 16px "Segoe UI",sans-serif}
+.msQuick{display:flex;flex-wrap:wrap;gap:6px}
+.msQuick button{flex:1 1 0;min-width:44px;height:32px;border-radius:999px;border:1px solid #2f5b62;background:#132d36;color:#d9fbf5;font:700 13px "Segoe UI",sans-serif;cursor:pointer;transition:background .12s,transform .12s}
+.msQuick button:is(:hover,:focus-visible){background:#1d4550;border-color:#9fe8d8}
+.msQuick button:active{transform:scale(.95)}
+.msQuick .msClearStake{flex:0 0 auto;padding:0 12px;background:transparent;color:#9fc7c0}
+.msFoot{display:grid;gap:6px;padding:12px;border:1px solid #2f5b62;border-radius:14px;background:#0b1d23}
+.msFoot div{display:flex;justify-content:space-between;align-items:baseline;color:#cfe9ea;font-size:14px}
+.msFoot .msReturn{color:#9fe8d8;font-size:17px}
+.msPlace{margin-top:6px;height:46px;border:0;border-radius:12px;background:linear-gradient(180deg,#d9fbf5,#a9eee2);color:#08242a;font:800 16px "Segoe UI",sans-serif;cursor:pointer;box-shadow:0 6px 18px #9fe8d833}
+.msPlace:disabled{background:#1b3a42;color:#6f9599;box-shadow:none;cursor:not-allowed}
+.msPlace:not(:disabled):hover{filter:brightness(1.05)}
+.msPlaceOne{height:40px;border:0;border-radius:10px;background:linear-gradient(180deg,#d9fbf5,#a9eee2);color:#08242a;font:800 14px "Segoe UI",sans-serif;cursor:pointer}
+.msPlaceOne:disabled{background:#1b3a42;color:#6f9599;cursor:not-allowed}
+.msPlaceOne:not(:disabled):hover{filter:brightness(1.05)}
+.msFoot .msPlace{background:transparent;border:1px solid #9fe8d8;color:#d9fbf5;box-shadow:none}
+.msFoot .msPlace:not(:disabled):hover{background:#183a44}
+/* Older slip rules style every header and input in the flyout; reset them inside the singles. */
+html body[data-book="6"] .deskFlyout .msBet header,html body[data-book="6"] .flightSheet .msBet header{position:static;padding:0;border:0;background:none;backdrop-filter:none;box-shadow:none}
+html body[data-book="6"] .msStakeRow input{height:auto;padding:0;border:0!important;background:transparent!important;box-shadow:none!important}
+.msQuick{flex-wrap:nowrap}
+.msQuick button{min-width:0}
+.msQuick .msClearStake{padding:0 10px}
+/* Phone sheet: keep every box inside the sheet and clear the sheet's own close button. */
+.msPanel,.msPanel *{box-sizing:border-box}
+.msPanel{min-width:0;max-width:100%;width:100%;overflow-x:hidden}
+.msBet,.msFoot,.msStakeRow,.msQuick{min-width:0;max-width:100%}
+.flightSheet .msHead{padding-right:46px}
+@media(max-width:750px){.msPanel{padding:10px 12px 14px}.msQuick button{font-size:12px}}
+/* ---- Bet box, v2: crests, aligned numbers, more finish ---- */
+.msPanel{--msNum:"Bahnschrift","Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+.msBet{position:relative;gap:12px;padding:0 0 14px;overflow:hidden;border-color:#2c5a62;background:linear-gradient(180deg,#112b33 0%,#0d2229 100%);box-shadow:0 8px 22px #00000040,inset 0 1px 0 #ffffff0d}
+.msBet>*:not(.msMatch){margin:0 14px}
+.msBet::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,#9fe8d8,#4fc3a8 60%,transparent)}
+.msMatch{display:flex;align-items:center;gap:8px;padding:12px 44px 10px 14px;background:#0a1c22;border-bottom:1px solid #22434b}
+.msCrest{display:grid;place-items:center;flex:none;width:24px;height:24px}
+.msCrest :is(svg,i,.flagBox){width:20px!important;height:23px!important;margin:0!important;font-size:8px}
+.msTeams{display:flex;align-items:center;gap:6px;min-width:0;font:600 12.5px/1.2 "Segoe UI",sans-serif;color:#cfe9ea}
+.msTeams span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.msTeams i{flex:none;font-style:normal;color:#5f8a8e;font-size:11px}
+.msRemove{position:absolute;top:9px;right:10px;width:28px;height:28px;margin:0!important;background:#0f262e}
+.msPick{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+.msPick div{display:grid;gap:3px;min-width:0}
+.msPick b{font:700 18px/1.15 var(--msNum);letter-spacing:-.01em;color:#fff}
+.msPick small{color:#9fc7c0;font-size:12px}
+.msOdds{display:grid;justify-items:end;gap:1px;min-width:74px;padding:7px 12px;border-radius:12px;background:linear-gradient(180deg,#d9fbf5,#a9eee2);color:#08242a;font:800 20px/1 var(--msNum);box-shadow:0 4px 14px #9fe8d833}
+.msOdds small{font:700 9px/1 "Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#2b6a66}
+.msStakeRow{grid-template-columns:1fr 1fr;align-items:stretch;gap:8px}
+.msTile{display:grid!important;gap:4px;align-content:center;height:auto!important;min-height:58px;padding:8px 12px!important;border:1px solid #2f5b62;border-radius:12px;background:#0a1c22}
+.msTile>span:first-child{color:#8fb8b4;font:700 10px/1 "Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.msNum{display:flex;align-items:baseline;justify-content:flex-end;gap:5px}
+.msNum input,.msNum b{font:700 21px/1.1 var(--msNum)!important;text-align:right;color:#fff}
+.msNum input{width:100%;min-width:0}
+.msRet .msNum b{color:#9fe8d8}
+.msNum em{flex:none;font:600 10px "Segoe UI",sans-serif;color:#6f9599;font-style:normal}
+label.msTile:focus-within{border-color:#9fe8d8;box-shadow:0 0 0 3px #9fe8d82e}
+.msReturnRow{display:none}
+.msQuick{gap:6px}
+.msQuick button{height:34px;border-radius:999px;background:#10272f;border-color:#2c5a62;font:700 13px var(--msNum)}
+.msQuick button:not(:disabled):is(:hover,:focus-visible){background:#173b45;border-color:#9fe8d8;color:#fff}
+.msQuick .msClearStake{flex:0 0 34px;width:34px;padding:0;display:grid;place-items:center;color:#9fc7c0}
+.msQuick .msClearStake svg{width:13px;height:13px}
+.msQuick .msClearStake:disabled{opacity:.35;cursor:default}
+.msPlaceOne{height:44px;border-radius:12px;font:800 15px var(--msNum);letter-spacing:.01em;box-shadow:0 6px 16px #9fe8d82a}
+.msHead{padding:2px 0}
+.msHead .slipTag{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:#163c44;color:#b4eee4;font:700 11px "Segoe UI",sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.msClearAll{display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 9px;border-radius:999px;border:1px solid #3a5f66;background:#0f262e;color:#cfe9ea;font:600 12px "Segoe UI",sans-serif;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.msClearAll svg{width:12px;height:12px}
+.msClearAll:is(:hover,:focus-visible){background:#3a1c22;border-color:#e8735f;color:#fff;text-decoration:none}
+.msFoot{gap:8px;padding:14px;border-color:#2c5a62;background:linear-gradient(180deg,#0e252c,#0a1c22)}
+.msFoot div span{color:#9fc7c0;font-size:13px}
+.msFoot div b{font:700 15px var(--msNum)}
+.msFoot .msReturn{font:800 20px var(--msNum)!important}
+.msPlaced{display:flex;align-items:center;gap:8px;border-radius:12px}
+.msPlaced::before{content:"✓";display:grid;place-items:center;flex:none;width:20px;height:20px;border-radius:50%;background:#3fae8f;color:#062019;font-weight:900;font-size:12px}
+.msQuick .msClearStake{flex:0 0 auto;width:auto;padding:0 12px;font:600 12px "Segoe UI",sans-serif;background:transparent}

@@ -1,0 +1,85 @@
+/* My Bets page (mybets.js) */
+html body[data-book="6"] main h1:has(+ .mbPage){display:none}
+.mbPage{display:grid;gap:16px;color:#eefcf9;font-family:"Segoe UI",sans-serif}
+.mbPage *{box-sizing:border-box}
+.mbHead{display:flex;align-items:center;gap:12px}
+.mbHeadIcon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(180deg,#d9fbf5,#a3ecdf);color:#06232a}
+.mbHeadIcon svg{width:22px;height:22px}
+.mbHead h1{margin:0!important;font:800 28px/1 "Bahnschrift","Segoe UI",sans-serif!important;display:block!important}
+.mbClose{margin-left:auto;display:grid;place-items:center;width:38px;height:38px;border:1px solid #2f5b62;border-radius:50%;background:#0d242b;color:#fff;font-size:22px;line-height:1;text-decoration:none}
+.mbClose:hover{border-color:#9fe8d8}
+.mbStats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mbStats div{display:grid;gap:6px;padding:14px 16px;border:1px solid #27525a;border-radius:14px;background:linear-gradient(180deg,#112a32,#0c1f26)}
+.mbStats small{color:#8fb8b4;font:700 11px/1 "Segoe UI",sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.mbStats b{font:800 20px/1 "Bahnschrift","Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+.mbUp{color:#6ff0b4}.mbDown{color:#ff8a8f}
+.mbLayout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px;align-items:start}
+.mbNav{display:grid;gap:2px;padding:6px;border:1px solid #27525a;border-radius:14px;background:#0a1c22;position:sticky;top:80px}
+.mbNav button{display:flex;align-items:center;justify-content:space-between;height:46px;padding:0 14px;border:0;border-left:3px solid transparent;border-radius:9px;background:transparent;color:#cfe9ea;font:700 15px/1 "Bahnschrift","Segoe UI",sans-serif;text-align:left;cursor:pointer}
+.mbNav button:hover{background:#143039;color:#fff}
+.mbNav button[aria-current="true"]{background:#1b4650;border-left-color:#9fe8d8;color:#fff}
+.mbNav em,.mbSeg em,.mbChip em{min-width:22px;height:20px;padding:0 7px;display:inline-grid;place-items:center;border-radius:999px;background:#1d4a52;color:#d9fbf5;font:800 11px/1 "Segoe UI",sans-serif;font-style:normal}
+.mbMainCol{display:grid;gap:12px;min-width:0}
+.mbBar{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mbSeg{display:inline-flex;gap:4px;padding:4px;border:1px solid #27525a;border-radius:999px;background:#0a1c22}
+.mbSeg button{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:#a9cdc8;font:700 14.5px/1 "Bahnschrift","Segoe UI",sans-serif;cursor:pointer}
+.mbSeg button[aria-selected="true"]{background:linear-gradient(180deg,#d9fbf5,#a3ecdf);color:#06232a}
+.mbSeg button[aria-selected="true"] em{background:#06232a;color:#b4eee4}
+.mbTitleSm{font:800 16px/1 "Bahnschrift","Segoe UI",sans-serif}
+.mbSelects{display:flex;gap:8px;margin-left:auto}
+.mbSelects select{height:38px;padding:0 12px;border:1px solid #2f5b62;border-radius:10px;background:#0a1c22;color:#eefcf9;font:600 13px "Segoe UI",sans-serif}
+.mbChips{display:flex;flex-wrap:wrap;gap:6px}
+.mbChip{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px;border:1px solid #27525a;border-radius:999px;background:#0d242b;color:#cfe9ea;font:700 13px/1 "Segoe UI",sans-serif;cursor:pointer}
+.mbChip:hover{border-color:#9fe8d8}
+.mbChip[aria-pressed="true"]{background:#163c44;border-color:#9fe8d8;color:#fff}
+.mbChip-Live em{background:#ff4d55;color:#fff}.mbChip-Won em{background:#1d6b4f;color:#d6ffe9}.mbChip-Lost em{background:#6b2229;color:#ffd6d9}.mbChip-Cashedout em{background:#7a5a12;color:#ffefc4}
+.mbList{display:grid;gap:10px}
+.mbCard{position:relative;display:grid;gap:12px;padding:14px 16px 12px;border:1px solid #27525a;border-radius:16px;background:linear-gradient(180deg,#112a32,#0c1f26);overflow:hidden;box-shadow:0 8px 22px #0005}
+.mbCard::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:#2f8f84}
+.mb-live::before{background:#ff4d55}.mb-won::before{background:#3fd193}.mb-lost::before{background:#e8636b}.mb-cash::before{background:#f2c14e}.mb-void::before{background:#7fa7a9}
+.mbCard>header{display:flex;align-items:center;justify-content:space-between;gap:8px;position:static;padding:0;background:none;border:0}
+.mbSport{color:#8fb8b4;font:700 11.5px/1 "Segoe UI",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.mbPill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font:800 11px/1 "Segoe UI",sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.mbPill i{width:7px;height:7px;border-radius:50%;background:#fff;animation:ffPulse 1.6s infinite}
+.mbPill-open{background:#163c44;color:#b4eee4}.mbPill-live{background:#ff4d55;color:#fff}.mbPill-won{background:#1d6b4f;color:#d6ffe9}.mbPill-lost{background:#6b2229;color:#ffd6d9}.mbPill-cash{background:#7a5a12;color:#ffefc4}.mbPill-void{background:#2b4a50;color:#cfe9ea}
+.mbMain{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
+.mbPick{display:grid;gap:4px;min-width:0}
+.mbPick b{font:800 18px/1.15 "Bahnschrift","Segoe UI",sans-serif;color:#fff;overflow-wrap:anywhere}
+.mbFixture,.mbFixture a{color:#9fc7c0;font-size:13px;text-decoration:none}
+.mbFixture a:hover{color:#fff;text-decoration:underline}
+.mbScore{color:#ff8a8f;font:700 12px "Segoe UI",sans-serif}
+.mbOdds{display:grid;justify-items:end;gap:2px;padding:7px 12px;border-radius:12px;background:linear-gradient(180deg,#d9fbf5,#a9eee2);color:#08242a;font:800 20px/1 "Bahnschrift","Segoe UI",sans-serif}
+.mbOdds small{font:700 9px/1 "Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#2b6a66}
+.mbLegs{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.mbLegs li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:7px 10px;border-radius:10px;background:#0a1c22}
+.mbLegs span{grid-column:1;color:#8fb8b4;font-size:12px}.mbLegs em{grid-row:1/3;grid-column:2;align-self:center;font-style:normal;font-weight:800}
+.mbNums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.mbNums div{display:grid;gap:4px;padding:9px 11px;border:1px solid #23474f;border-radius:11px;background:#0a1c22;min-width:0}
+.mbNums small{color:#8fb8b4;font:700 10px/1 "Segoe UI",sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.mbNums b{font:800 15.5px/1.1 "Bahnschrift","Segoe UI",sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mbNums b em{font:600 10px "Segoe UI",sans-serif;font-style:normal;color:#6f9599}
+.mbSmall{font-size:13px!important}.mbRef{font-family:Consolas,monospace!important}
+.mbOffer{padding:8px 12px;border-radius:10px;background:#3a2a12;border:1px solid #c98a3a;color:#f3d39b;font-size:13px}
+.mbCard>footer{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.mbGap{flex:1}
+.mbCash{height:36px;padding:0 14px;border:1px solid #9fe8d8;border-radius:10px;background:transparent;color:#d9fbf5;font:800 13px/1 "Bahnschrift","Segoe UI",sans-serif;cursor:pointer}
+.mbCash:hover{background:#183a44}
+.mbCash.mbConfirm{border:0;background:linear-gradient(180deg,#ffe08a,#f2c14e);color:#2a1d00}
+.mbGhost{height:32px;padding:0 11px;border:1px solid #2f5b62;border-radius:9px;background:#0d242b;color:#cfe9ea;font:600 12.5px "Segoe UI",sans-serif;cursor:pointer}
+.mbGhost:hover{border-color:#9fe8d8;color:#fff}
+.mbEmpty{display:grid;justify-items:center;gap:8px;padding:48px 20px;border:1px dashed #2f5b62;border-radius:16px;text-align:center;background:#0a1c2299}
+.mbEmptyIcon{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:#163c44;color:#9fe8d8}
+.mbEmptyIcon svg{width:34px;height:34px}
+.mbEmpty b{font:800 17px "Bahnschrift","Segoe UI",sans-serif}.mbEmpty p{margin:0;color:#9fc7c0;font-size:13.5px;max-width:360px}
+.mbBtn{margin-top:6px;height:40px;padding:0 18px;border:0;border-radius:11px;background:linear-gradient(180deg,#d9fbf5,#a3ecdf);color:#06232a;font:800 14px/1 "Bahnschrift","Segoe UI",sans-serif;cursor:pointer}
+.mbFine{margin:0;color:#6f9599;font-size:12px;text-align:center}
+@media(max-width:900px){.mbLayout{grid-template-columns:1fr}.mbNav{position:static;grid-auto-flow:column;overflow-x:auto}.mbStats{grid-template-columns:repeat(2,1fr)}.mbNums{grid-template-columns:repeat(2,1fr)}.mbSelects{margin-left:0}}
+.mbNav{align-content:start;height:auto}
+/* Title: a plain heading line, no band or close button */
+.mbHead{display:flex;align-items:center;gap:12px;margin:6px 0 2px;padding:0;background:none!important;border:0!important;box-shadow:none!important}
+.mbHeadIcon{width:34px;height:34px;border-radius:10px;background:#163c44;color:#9fe8d8;box-shadow:inset 0 0 0 1px #2f6a72}
+.mbHeadIcon svg{width:19px;height:19px}
+.mbTitle{display:grid;gap:3px}
+.mbTitle h1{margin:0!important;font:800 26px/1 "Bahnschrift","Segoe UI",sans-serif!important;letter-spacing:.01em;color:#fff}
+.mbTitle small{color:#8fb8b4;font:500 12.5px/1.2 "Segoe UI",sans-serif}
+html body[data-book="6"] .mbCard>header{min-height:0!important;height:auto!important;margin:0!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;position:static!important}

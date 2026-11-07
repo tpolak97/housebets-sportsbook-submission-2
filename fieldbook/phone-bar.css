@@ -1,0 +1,48 @@
+/* Phone bottom bar (phone-bar.js). Hidden on desktop. */
+.phoneBar{display:none}
+@media(max-width:750px){
+  html body[data-book="6"] #productSidebar,html body[data-book="6"] .betsBubble,html body[data-book="6"] #supportLauncher{display:none!important}
+  .phoneBar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);align-items:end;
+    padding:6px 4px calc(6px + env(safe-area-inset-bottom));background:#0a171dF2;border-top:1px solid #24464e;backdrop-filter:blur(8px);box-shadow:0 -10px 24px #0007}
+  body.pbCasino .phoneBar{grid-template-columns:repeat(4,1fr)}
+  .phoneBar>:is(a,button){display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;min-height:52px;padding:4px 2px;border:0;border-radius:12px;background:none;
+    color:#9fbfc0;font:600 11px/1.1 "Segoe UI",system-ui,sans-serif;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .phoneBar>:is(a,button):active{background:#12303a}
+  .phoneBar>.active,.phoneBar>.active:is(:hover,:focus-visible){color:#eafffb!important;background:none!important;box-shadow:none!important;border:0!important}
+  .phoneBar>.active .pbLabel{font-weight:800}
+  .phoneBar>.active::after{content:"";width:18px;height:3px;border-radius:2px;background:#9fe8d8;margin-top:1px}
+  .phoneBar>:not(.active)::after{content:"";height:3px;margin-top:1px}
+  .phoneBar .pbIcon{position:relative;display:grid;place-items:center;width:28px;height:26px}
+  .phoneBar .utilityMark{width:24px!important;height:24px!important;margin:0}
+  .phoneBar .pbCount{position:absolute;top:-4px;right:-9px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:#e8473f;color:#fff;font:800 10px/17px "Segoe UI",sans-serif;text-align:center;box-shadow:0 0 0 2px #0a171d}
+  /* Bet slip: raised centre button */
+  .phoneBar .pbSlip{position:relative;margin-top:-18px;color:#08242a}
+  .phoneBar .pbSlip .pbIcon{width:50px;height:50px;border-radius:16px;background:linear-gradient(180deg,#d4fff6,#9fe8d8);box-shadow:0 6px 16px #0009,0 0 0 3px #0a171d}
+  .phoneBar .pbSlipMark{width:26px;height:26px}
+  .phoneBar .pbSlip .pbCount{top:-5px;right:-6px;background:#2b5960}
+  .phoneBar .pbSlip.hasPick .pbIcon{background:linear-gradient(180deg,#ffe08a,#f6c445)}
+  .phoneBar .pbSlip.hasPick .pbCount{background:#e8473f}
+  .phoneBar .pbSlip .pbLabel{color:#d9fbf5;font-weight:800}
+  /* Room for the bar; the slip summary bar sits just above it */
+  html body[data-book="6"] main{padding-bottom:calc(96px + env(safe-area-inset-bottom))!important}
+  html body[data-book="6"] .dock{display:none!important}
+  .phoneBar .pbSlip.alert .pbLabel{color:#ffb35c}
+  /* Prices higher on phones: a shorter banner and slimmer featured cards put the first odds well above the fold, even on small phones */
+  html body[data-book="6"] .snapCard .snapTeams{margin:8px 0 4px}
+  html body[data-book="6"] .snapCard .snapTeams .rosterPortrait{height:98px;width:min(100%,96px)}
+  html body[data-book="6"] .snapCard .snapMarket{margin-top:0}
+  html body[data-book="6"] .promoArt .promoLink.hubieSlide{min-height:132px!important;height:132px}
+  html body[data-book="6"] .promoArt .hubieSlide .hubieArt{height:132px!important}
+  /* Keep the 18+ line clear: banner dots move to the top-right corner on phones */
+  html body[data-book="6"] .promoArt .promoControls{top:6px!important;bottom:auto!important;right:6px!important;left:auto!important;transform:none!important}
+}
+
+/* Empty sport (empty-sports.js) and zero-count directory entries */
+.noEvents{display:grid;justify-items:center;gap:8px;margin:10px 0 22px;padding:22px 16px;border:1px dashed #2f5b62;border-radius:16px;background:#0b1a21;text-align:center;color:#cfe9ea}
+.noEvents .noEventsIcon svg{width:72px;height:54px}
+.noEvents h3{margin:0;font:800 17px/1.2 "Segoe UI",sans-serif;color:#eefcf9}
+.noEvents p{margin:0;color:#9fc7c0;font-size:13px}
+.noEvents div{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.noEvents button{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #3f7179;background:#10272f;color:#d9fbf5;font:700 13px "Segoe UI",sans-serif;cursor:pointer}
+.noEvents button:first-child{background:#bdf2ec;color:#08242a;border-color:#bdf2ec}
+#sportDirectory .dirNone{margin-left:auto;color:#6f9196;font-size:10px;white-space:nowrap}

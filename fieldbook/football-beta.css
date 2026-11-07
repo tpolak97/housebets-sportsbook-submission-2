@@ -1,0 +1,78 @@
+.sportTeamBadge{display:grid;place-items:center;width:86px;height:100px}.sportTeamBadge .pennant{font-size:32px}.sportTeamBadge .flagBox img{max-width:66px;max-height:66px}
+.footballHeading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:10px 0 22px}.footballHeading small{color:#abd6ce;letter-spacing:.12em;font-size:11px}.footballHeading h1{font-size:clamp(26px,3vw,38px);margin:5px 0}.footballHeading p{color:#a8bfc5;margin:0}.footballHeading a{color:#baf4ed}
+.footballLeagues{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}.footballLeagues button{border-radius:22px;padding:9px 13px;background:#0d1e27;border:1px solid #29454e;color:#cadddf}.footballLeagues button.active{background:#164049;color:#c5fff3;border-color:#6daba6}.footballLeagues small{padding-left:6px}
+.footballControls{display:flex;align-items:center;gap:12px}.footballControls>input{flex:1;min-width:0}.footballControls label{display:flex;gap:8px;align-items:center}.footballControls select{max-width:240px}.footballTools{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.footballTools button{border-radius:20px}.footballDirectory{padding:12px 14px;background:#0b1920;border:1px solid #23404a;border-radius:10px;margin-bottom:16px}.footballDirectory summary{cursor:pointer;color:#bce8e1}.footballTeams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:12px}.footballTeams>div{display:flex;background:#0d1e27;border-radius:8px}.footballTeams button{border:0;background:none;text-align:left;min-width:0}.footballTeams>div>button:first-child{flex:1;display:flex;align-items:center;gap:6px}.footballTeams .teamFollow{flex:none;width:38px}.footballSummary{font-size:13px;color:#a8bfc5}.footballEmpty{padding:22px;background:#0b1920;border-radius:12px}
+@media(max-width:650px){.footballHeading{align-items:start}.footballHeading>a{font-size:12px}.footballControls{display:block}.footballControls input{width:100%}.footballControls label{margin-top:8px}.footballControls select{flex:1;max-width:100%}.footballTeams{grid-template-columns:1fr}.footballLeagues button{padding:7px 10px;font-size:13px}}
+.footballMatchCard{margin:10px;border:1px solid #2b4c54;border-radius:12px;overflow:hidden;background:#0d1e27}
+.footballCardMeta{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;background:#0b1920}.footballCardMeta a{color:#aef0e5;font-size:13px}
+.footballPitch{display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;gap:12px;padding:18px 16px;background:radial-gradient(circle at center,transparent 38px,#87d2b21c 39px,transparent 41px),linear-gradient(90deg,transparent 49.8%,#87d2b218 50%,transparent 50.2%),repeating-linear-gradient(90deg,#102b29 0 12.5%,#11332d 12.5% 25%);position:relative}
+.footballCardSide{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-width:0}.footballCardSide>b{font-size:18px;font-weight:750;letter-spacing:-.025em}.footballCardSide>button{font-size:12px;border-radius:22px;padding:4px 10px}.footballCardSide .rosterPortrait{width:140px;height:144px}.footballCardSide .portraitName{font-size:12px}.footballScore{text-align:center}.footballScore strong{font:800 36px/1.2 "Segoe UI",sans-serif;display:block;color:#d2fff2}.footballScore small{display:block;font-size:12px;color:#b8d8d3}
+.footballCardOdds{padding:10px 14px 14px}.footballCardOdds>small{display:block;margin-bottom:6px;color:#acd3d0}.footballCardOdds .prices button{min-height:49px;font-weight:650}
+.footballHeading h1{font-family:"Bahnschrift","Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em}
+html :is(.railDirectory,.sportTrack) button:is(:hover,:focus-visible) .actionIcon :is(.swing,.shot,.actProp,.reach,.seal,.flash){animation:var(--hover-action,var(--action)) 1s ease-out infinite!important}
+@media(max-width:650px){.footballMatchCard{margin:8px 0}.footballPitch{grid-template-columns:1fr 60px 1fr;padding:14px 8px;gap:5px}.footballCardSide>b{font-size:15px}.footballCardSide .rosterPortrait{width:102px;height:126px}.footballScore strong{font-size:27px}}
+
+/* Kit-card portraits: no sway, name + output label, three progress dots */
+.footballRoster .portraitLayer :is(img,svg){animation:none!important;height:calc(100% - 44px)!important;top:2px;filter:drop-shadow(0 6px 8px #0007)}
+.footballRoster .portraitLayer img{z-index:1;object-fit:contain}
+.footballRoster .portraitLayer img+svg{opacity:0}
+.footballRoster .portraitName{bottom:9px!important;white-space:normal!important;line-height:1.2!important;display:grid!important;gap:1px}
+.footballRoster .portraitName b{font:700 12px/1.2 "Segoe UI",system-ui,sans-serif;color:#eefcf9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.footballRoster .portraitName small{font:600 10px/1.2 "Segoe UI",system-ui,sans-serif;color:#9fc7c0;letter-spacing:.02em;min-height:12px}
+.footballDots{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:4px}
+.footballDots i{width:4px;height:4px;border-radius:50%;background:#ffffff33;transition:background .4s,width .4s}
+.footballDots i.on{width:12px;border-radius:3px;background:#9fe8d8}
+@media(max-width:650px){.footballRoster .portraitName b{font-size:11px}.footballRoster .portraitName small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.footballDots i{transition:none}}/* Generated stadium pitch (assets/generated/pitch-side.webp): halfway line centred, one half per team */
+.footballPitch{background:linear-gradient(180deg,#07121acc 0%,#07121a33 30%,#07121a14 55%,#07121a99 100%),radial-gradient(ellipse at 50% 55%,transparent 40%,#07121a88 100%),url(assets/generated/pitch-side.webp) center 62%/cover no-repeat,#11332d}
+.footballPitch :is(.footballCardSide>b,.portraitName,.footballScore){text-shadow:0 1px 3px #000c,0 0 12px #0009}
+.footballPitch .footballCardSide>button{background:#07121ab3;backdrop-filter:blur(4px)}
+.footballScore{display:grid;place-items:center;width:84px;height:84px;margin:auto;border-radius:50%;background:#07121a8c;border:1px solid #ffffff2e;backdrop-filter:blur(3px)}
+.footballScore strong{font-size:30px!important;line-height:1!important}.footballScore small{font-size:11px!important}
+body[data-book="6"] .flightScore:has(.footballRoster){background:linear-gradient(180deg,#07121ad9 0%,#07121a40 35%,#07121a1f 60%,#07121ab3 100%),url(assets/generated/pitch-side.webp) center 60%/cover no-repeat,#11332d;border-color:#4b6e74}
+body[data-book="6"] .flightScore:has(.footballRoster) :is(h1,h2,.portraitName,.scoreSide b,small){text-shadow:0 1px 3px #000c,0 0 12px #0009}
+@media(max-width:650px){.footballPitch{background-position:center 62%,center,center 62%}.footballScore{width:58px;height:58px}.footballScore strong{font-size:22px!important}.footballScore small{font-size:9px!important}}
+/* Hubie promo slide + side arrows */
+.promoArt{position:relative}
+.hubieSlide{position:relative;display:flex!important;align-items:stretch;width:100%;aspect-ratio:4.49;min-height:150px;overflow:hidden;text-align:left;cursor:pointer;background:radial-gradient(ellipse 60% 120% at 78% 40%,#7b3fe0aa,transparent 70%),linear-gradient(100deg,#160733 0%,#2a0f5c 45%,#3b1680 100%)!important;color:#fff}
+.hubieCopy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 0 0 clamp(52px,6vw,84px);width:58%}
+.hubieCopy small{font:700 11px/1 "Segoe UI",sans-serif;letter-spacing:.18em;color:#c9b6ff}
+.hubieCopy strong{font:900 clamp(22px,3.1vw,44px)/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:-.02em;text-transform:uppercase;background:linear-gradient(180deg,#fff 40%,#ffd86b);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 10px #0008)}
+.hubieSub{font:500 clamp(12px,1vw,15px)/1.35 "Segoe UI",sans-serif;color:#e4dcff;max-width:430px}
+.hubieCta{align-self:flex-start;margin-top:4px;padding:8px 18px;border-radius:999px;font:800 14px/1 "Segoe UI",sans-serif;color:#1b0b3d;background:linear-gradient(180deg,#ffe27a,#f5b82e);box-shadow:0 4px 14px #f5b82e55}
+.hubieCopy em{font:500 10px/1 "Segoe UI",sans-serif;color:#a995d8;font-style:normal}
+.hubieSlide .hubieArt{position:absolute;right:56px;top:0;height:100%;width:auto;min-height:0;aspect-ratio:740/690;display:block;object-fit:contain;object-position:50% 100%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%);mask-image:linear-gradient(90deg,transparent 0,#000 16%);transition:transform .6s ease}
+.hubieSlide:hover img.hubieArt{transform:scale(1.03)}
+.hubieSlide:hover .hubieCta{filter:brightness(1.08)}
+.promoArrow{position:absolute;top:50%;z-index:3;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid #ffffff40;background:#08131acc;color:#fff;font:400 26px/1 system-ui;display:grid;place-items:center;padding:0 0 3px;cursor:pointer;backdrop-filter:blur(4px);transition:background .2s,transform .2s}
+.promoArrow:hover,.promoArrow:focus-visible{background:#1d3a44;transform:translateY(-50%) scale(1.08)}
+.promoArrow.prev{left:10px}.promoArrow.next{right:10px}
+html .promoArt .promoControls{left:50%!important;right:auto!important;transform:translateX(-50%);bottom:6px!important;z-index:3;padding:0 4px}
+@media(max-width:650px){.hubieSlide{aspect-ratio:auto;min-height:168px}.hubieCopy{width:62%;padding-left:44px;gap:5px}.hubieSub{display:none}.hubieCta{font-size:12px;padding:7px 14px}.hubieSlide .hubieArt{right:36px}.promoArrow{width:30px;height:30px;font-size:20px}.promoArrow.prev{left:6px}.promoArrow.next{right:6px}}
+/* Real player photos: framed portrait with club-colour border; kit card stays underneath as fallback */
+.footballRoster .portraitLayer img{z-index:1;left:50%!important;right:auto!important;transform:translateX(-50%);width:auto!important;aspect-ratio:4/5;object-fit:cover!important;border-radius:12px;border:2px solid var(--club,#4a7a80);box-shadow:0 6px 16px #000a,0 0 0 1px #0006;filter:none!important;background:#0d1e27}
+/* Sport directory dialog (Sports / Esports / Racing) */
+#sportDirectory{margin:9vh auto auto;width:min(1180px,94vw);max-height:84vh;padding:0;border:1px solid #2b4c54;border-radius:16px;background:#0f2129;color:#e6f3f2;box-shadow:0 30px 80px #000b;overflow:hidden}
+#sportDirectory::backdrop{background:#020a0dcc;backdrop-filter:blur(3px)}
+.dirHead{display:flex;align-items:center;gap:10px;padding:16px 18px 10px}
+.dirTabs{flex:1;display:grid;grid-template-columns:repeat(3,1fr);max-width:640px;margin:0 auto;padding:4px;border-radius:12px;background:#0b1a21}
+.dirTabs button{border:0;border-radius:9px;padding:10px 0;background:none;color:#b8cfd2;font:600 15px/1 "Segoe UI",sans-serif;cursor:pointer}
+.dirTabs button[aria-selected=true]{background:#bdf2ec;color:#0b2027}
+.dirAll,.dirClose{border:1px solid #2b4c54;border-radius:10px;background:#122a33;color:#cfe9ea;cursor:pointer}
+.dirAll{padding:9px 12px;font:600 13px/1 "Segoe UI",sans-serif}.dirClose{width:38px;height:38px;font-size:22px;line-height:1}
+.dirGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px 18px;padding:8px 22px 22px;max-height:calc(84vh - 80px);overflow:auto}
+.dirSport{display:flex;align-items:center;gap:10px;min-width:0;padding:8px 10px;border:0;border-radius:10px;background:none;color:#e6f3f2;text-align:left;cursor:pointer}
+.dirSport:is(:hover,:focus-visible),.dirSport[aria-pressed=true]{background:#163039}
+.dirIcon{position:relative;flex:none;display:grid;place-items:center;width:52px;height:38px}
+.dirIcon .sportIcon{width:52px!important;height:38px!important}
+.dirHot{position:absolute;left:-6px;top:-6px;display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#f0483e;font-size:10px;font-style:normal}
+.dirName{min-width:0;font:600 15px/1.2 "Segoe UI",sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dirCount{flex:none;padding:3px 7px;border-radius:999px;background:#1d3a44;color:#a9cfd2;font:600 12px/1 "Segoe UI",sans-serif}
+.sportBar:has(.barDirectory){grid-template-columns:auto auto auto minmax(0,1fr) auto}
+.barDirectory{display:flex;align-items:center;gap:6px;min-height:44px;padding:5px 12px;border-radius:22px;white-space:nowrap}
+.barDirectory .utilityMark{width:18px;height:18px}
+@media(max-width:900px){.dirGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 8px;padding:6px 10px 16px}}
+@media(max-width:650px){#sportDirectory{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0;margin:0}.dirHead{padding:10px}.dirTabs button{font-size:13px;padding:9px 0}.dirAll{display:none}.dirGrid{max-height:calc(100dvh - 64px)}.dirName{font-size:13px;white-space:normal;line-height:1.15}.dirIcon,.dirIcon .sportIcon{width:44px!important;height:32px!important}.barDirectory span{display:none}}
+/* Hubie icons read better a little larger in the sport directory */
+.dirIcon{width:66px;height:48px}.dirIcon .sportIcon{width:66px!important;height:48px!important}
+.dirSport{padding:6px 10px}

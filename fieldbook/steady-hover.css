@@ -1,0 +1,6 @@
+/* No hover lift. characters.css lifted every button 2px on hover/focus; that made the banner and cards jump and
+   overrode the banner arrows' centring (translateY(-50%)), so the arrows dropped on hover. Hover now changes colour only. */
+html body[data-book="6"] button:not(:disabled):is(:hover,:focus-visible){transform:none;box-shadow:none}
+html body[data-book="6"] :is(.ffRow,.fixtureStrip a.ffChip,.mpOdds,#flightMarkets .market .prices button):hover{transform:none}
+html body[data-book="6"] .promoArrow,html body[data-book="6"] .promoArrow:is(:hover,:focus-visible,:active){transform:translateY(-50%)!important}
+html body[data-book="6"] .promoArrow:is(:hover,:focus-visible){background:#1d3a44;box-shadow:0 0 0 2px #9fe8d8aa}

@@ -1,0 +1,93 @@
+/* Match page polish (match-polish.js): refined market cards and tabs, Players tab, fixture strip toolbar. */
+html body[data-book="6"]{--mpLine:#27525a;--mpLineHi:#9fe8d8;--mpCard:linear-gradient(180deg,#112a32,#0c1f26);--mpMint:#b4eee4}
+
+/* Market tabs */
+html body[data-book="6"] .marketTabs{display:flex;flex-wrap:wrap;gap:6px;padding:6px;border:1px solid var(--mpLine);border-radius:16px;background:#0a1a20;margin:14px 0}
+html body[data-book="6"] .marketTabs button{height:40px;padding:0 16px;border:1px solid transparent;border-radius:11px;background:transparent;color:#a9cdc8;font:700 14.5px/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:.01em;box-shadow:none;transition:background .15s,color .15s,border-color .15s}
+html body[data-book="6"] .marketTabs button:hover{background:#143039;color:#fff}
+html body[data-book="6"] .marketTabs button.active{background:linear-gradient(180deg,#d9fbf5,#a3ecdf);color:#06232a;border-color:#d9fbf5;box-shadow:0 4px 14px #9fe8d833}
+html body[data-book="6"] .marketTabs button.mpTab:not(.active){color:#f6d26b}
+html body[data-book="6"] .marketTabs button.mpTab::before{content:"";display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;background:currentColor;vertical-align:1px}
+
+/* Market cards */
+html body[data-book="6"] #flightMarkets{gap:12px}
+html body[data-book="6"] #flightMarkets .market{position:relative;padding:16px 16px 12px;border:1px solid var(--mpLine);border-radius:16px;background:var(--mpCard);box-shadow:0 10px 26px #0006,inset 0 1px 0 #ffffff0a;overflow:hidden}
+html body[data-book="6"] #flightMarkets .market::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,#9fe8d8,#2f8f84)}
+html body[data-book="6"] #flightMarkets .market h3{display:flex;align-items:center;gap:8px;margin:0 0 12px;font:800 16px/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#eefcf9}
+html body[data-book="6"] #flightMarkets .market .prices{gap:8px}
+html body[data-book="6"] #flightMarkets .market .prices button{min-height:52px;padding:0 14px;border:1px solid #2b5860;border-radius:12px;background:#0a1c22;transition:border-color .15s,background .15s,transform .15s}
+html body[data-book="6"] #flightMarkets .market .prices button:not([disabled]):hover{border-color:var(--mpLineHi);background:#123039;transform:translateY(-1px)}
+html body[data-book="6"] #flightMarkets .market .prices button b{font:800 18px/1 "Bahnschrift","Segoe UI",sans-serif;color:#fff}
+html body[data-book="6"] #flightMarkets .market .prices button.chosen{border-color:#d9fbf5;background:linear-gradient(180deg,#d9fbf5,#a3ecdf);color:#06232a}
+html body[data-book="6"] #flightMarkets .market .prices button.chosen b{color:#06232a}
+html body[data-book="6"] #flightMarkets .market details summary{margin-top:8px;color:#7fa7a9;font-size:12.5px;cursor:pointer}
+
+/* Players tab */
+.mpPlayers{display:grid;gap:14px;grid-column:1/-1}
+.mpSquad{border:1px solid var(--mpLine);border-radius:16px;background:var(--mpCard);overflow:hidden;box-shadow:0 10px 26px #0006}
+.mpSquad>header{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--mpLine);background:linear-gradient(90deg,#163c44,#0e252c 70%)}
+.mpSquad>header h3{margin:0;font:800 18px/1.1 "Bahnschrift","Segoe UI",sans-serif;color:#fff}
+.mpSquad>header small{color:#8fb8b4;font-size:12px}
+.mpSquad>header .clubShield{margin:0}
+.mpTable{overflow-x:auto}
+.mpRow{display:grid;grid-template-columns:minmax(220px,1.8fr) repeat(7,minmax(74px,1fr));gap:6px;align-items:center;min-width:820px;padding:8px 12px;border-top:1px solid #1d3d45}
+.mpRow:nth-child(even):not(.mpHeadRow){background:#ffffff05}
+.mpHeadRow{border-top:0;padding-top:10px;padding-bottom:6px}
+.mpHeadRow span{color:#7fa7a9;font:700 10.5px/1.1 "Segoe UI",sans-serif;letter-spacing:.07em;text-transform:uppercase;text-align:center}
+.mpHeadRow span:first-child{text-align:left}
+.mpWho{display:flex;align-items:center;gap:10px;min-width:0}
+.mpWho>span:last-child{display:grid;gap:3px;min-width:0}
+.mpWho b{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:700 15px/1.1 "Bahnschrift","Segoe UI",sans-serif;color:#f2fffc}
+.mpWho small{color:#8fb8b4;font-size:11.5px;white-space:nowrap}
+.mpPhoto{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;overflow:hidden;background:#0a1c22;border:1.5px solid #2f5b62}
+.mpPhoto img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.mpPhoto i{display:grid;place-items:center;width:100%;height:100%;background:var(--kit);color:#fff;font:800 14px/1 "Bahnschrift",sans-serif;font-style:normal;text-shadow:0 1px 2px #000a}
+.mpOdds{display:grid;justify-items:center;gap:3px;height:48px;padding:0 4px;border:1px solid #2b5860;border-radius:11px;background:#0a1c22;color:#fff;font:800 16px/1 "Bahnschrift","Segoe UI",sans-serif;cursor:pointer;align-content:center;transition:border-color .15s,background .15s,transform .15s}
+.mpOdds small{display:none}
+.mpOdds:hover{border-color:var(--mpLineHi);background:#123039;transform:translateY(-1px)}
+.mpOdds[aria-pressed="true"]{background:linear-gradient(180deg,#d9fbf5,#a3ecdf);border-color:#d9fbf5;color:#06232a}
+.mpNote{margin:0;color:#6f9599;font-size:12px;text-align:center}
+
+/* Fixture strip toolbar */
+html body[data-book="6"].mpOn .flightBack{display:none}
+.mpBar{display:flex;align-items:center;gap:12px;margin:6px 0 4px;min-width:0}
+.mpNav{display:flex;gap:6px;flex:none}
+.mpHome,.mpBack{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;border:1px solid var(--mpLine);border-radius:12px;background:#0d242b;color:#eefcf9;font:700 14px/1 "Bahnschrift","Segoe UI",sans-serif;text-decoration:none;transition:border-color .15s,background .15s}
+.mpHome{background:linear-gradient(180deg,#d9fbf5,#a3ecdf);border-color:#d9fbf5;color:#06232a}
+.mpHome svg{width:16px;height:16px}
+.mpBack:hover{border-color:var(--mpLineHi);background:#143039}
+.mpLeagues{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;min-width:0;padding:2px}
+.mpLeagues::-webkit-scrollbar{display:none}
+.mpLeague{flex:none;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px 0 5px;border:1px solid var(--mpLine);border-radius:999px;background:#0d242b;color:#cfe9ea;font:700 13.5px/1 "Bahnschrift","Segoe UI",sans-serif;cursor:pointer;transition:border-color .15s,background .15s}
+.mpLeague:hover{border-color:var(--mpLineHi)}
+.mpLeague[aria-pressed="true"]{background:#163c44;border-color:var(--mpLineHi);color:#fff;box-shadow:0 0 0 1px #9fe8d855 inset}
+.mpLeague em{min-width:20px;height:20px;padding:0 6px;display:inline-grid;place-items:center;border-radius:999px;background:#1d4a52;color:#d9fbf5;font:800 11px/1 "Segoe UI",sans-serif;font-style:normal}
+.mpLogo{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;overflow:hidden}
+.mpLogo img{width:22px;height:22px;object-fit:contain}
+.mpLogoAll{background:#9fe8d8;color:#06232a;font:900 13px/1 "Segoe UI",sans-serif}
+html body[data-book="6"] .fixtureStrip a.ffChip[hidden]{display:none}
+@media(max-width:750px){.mpBar{flex-direction:column;align-items:stretch}.mpRow{grid-template-columns:minmax(170px,1.5fr) repeat(7,minmax(64px,1fr));min-width:700px}}
+html body[data-book="6"] .mpSquad>header{justify-content:flex-start;position:static;backdrop-filter:none}
+html body[data-book="6"] .mpSquad>header>div{display:grid;gap:3px;margin-right:auto;text-align:left}
+
+/* Player badges: club-colour accent, readable number and a neutral player silhouette. */
+.mpPhoto{border-radius:13px;border-color:#48747a;background:#102d35;overflow:hidden}
+.mpPhoto i{position:relative;display:grid;place-items:center;width:100%;height:100%;background:linear-gradient(145deg,#254b54,#0a2027);color:#d6eee9;font-style:normal;text-shadow:none}
+.mpPhoto i::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--kit);border-right:1px solid #ffffff55}
+.mpPhoto i svg{width:25px;height:25px;margin-left:2px;fill:#9ac2bd;opacity:.85}
+.mpPhoto i b{position:absolute;right:1px;bottom:1px;min-width:17px;height:16px;padding:0 2px;display:grid;place-items:center;border-radius:5px;background:#e0f8f1;color:#102b30;border:1px solid #153d43;font:800 10px/1 "Segoe UI",sans-serif}
+
+/* Always-visible rulebook excerpt below the match markets. */
+.marketRulebook{margin:22px 0 28px;padding:20px 22px;border:1px solid #32616a;border-radius:16px;background:linear-gradient(145deg,#123039,#0b2028);color:#dcefeb;box-shadow:0 10px 26px #0005}
+.marketRulebookHead{display:flex;justify-content:space-between;align-items:end;gap:12px;padding-bottom:15px;border-bottom:1px solid #31555c}
+.marketRulebookEyebrow{display:block;margin-bottom:5px;color:#9fe8d8;font:800 11px/1.2 "Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.marketRulebook h2{margin:0;color:#fff;font:800 20px/1.2 "Bahnschrift","Segoe UI",sans-serif}
+.marketRulebookSource{color:#9dbfbb;font-size:12px;text-align:right}
+.marketRulebookBody{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:16px}
+.marketRulebook h3{margin:0 0 10px;color:#f1d27d;font:800 13px/1.2 "Segoe UI",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.marketRulebook dl,.marketRulebook ul{margin:0;padding:0}
+.marketRulebook dl>div{display:grid;grid-template-columns:90px 1fr;gap:10px;padding:7px 0;border-top:1px solid #ffffff14}
+.marketRulebook dt{font-weight:800;color:#fff}
+.marketRulebook dd{margin:0;color:#bfd8d4}
+.marketRulebook li{margin:0 0 8px 18px;padding-left:3px;color:#bfd8d4}
+@media(max-width:750px){.marketRulebook{padding:17px}.marketRulebookHead{align-items:start;flex-direction:column}.marketRulebookSource{text-align:left}.marketRulebookBody{grid-template-columns:1fr;gap:18px}}

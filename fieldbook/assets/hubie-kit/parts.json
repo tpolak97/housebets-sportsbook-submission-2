@@ -1,0 +1,29 @@
+{
+ "head": {
+  "ratio": 0.733
+ },
+ "head-plain": {
+  "ratio": 0.981
+ },
+ "torso": {
+  "ratio": 0.778
+ },
+ "upper-arm-back": {
+  "ratio": 0.714
+ },
+ "upper-arm-front": {
+  "ratio": 0.578
+ },
+ "forearm-back": {
+  "ratio": 0.422
+ },
+ "forearm-front": {
+  "ratio": 0.411
+ },
+ "leg-back": {
+  "ratio": 0.586
+ },
+ "leg-front": {
+  "ratio": 0.586
+ }
+}

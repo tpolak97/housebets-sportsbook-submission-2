@@ -1,0 +1,60 @@
+/* Scoreboard fixture rows, lively group headers and match-page fixture chips (fixture-face.js). */
+html body[data-book="6"] .clubShield.lg{width:40px;height:47px;margin:0}
+
+/* Group headers */
+html body[data-book="6"] .ffGroup>header{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#123a40 0%,#0e2a31 45%,transparent 100%);border-left:3px solid #9fe8d8}
+html body[data-book="6"] .ffGroupLive>header{background:linear-gradient(90deg,#3a1820 0%,#1f2028 45%,transparent 100%);border-left-color:#ff5a5f}
+html body[data-book="6"] .ffGroup>header h2{display:flex;align-items:center;gap:9px;font:800 20px/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:.01em}
+html body[data-book="6"] .ffGroup>header small{margin-left:auto}
+.ffSportMark,.ffClockMark{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#0a1c22;border:1px solid #2f5b62;font-size:16px;line-height:1}
+.ffSportMark{animation:ffSpin 6s linear infinite}
+.ffLiveMark{position:relative;display:grid;place-items:center;width:30px;height:30px}
+.ffLiveMark i,.ffDot{display:block;width:10px;height:10px;border-radius:50%;background:#ff4d55;box-shadow:0 0 0 0 #ff4d5599;animation:ffPulse 1.6s ease-out infinite}
+.ffCount{padding:4px 10px;border-radius:999px;background:#163c44;color:#b4eee4;font:800 11px/1 "Segoe UI",sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.ffCountLive{background:#ff4d55;color:#fff}
+@keyframes ffPulse{0%{box-shadow:0 0 0 0 #ff4d5599}70%{box-shadow:0 0 0 9px #ff4d5500}100%{box-shadow:0 0 0 0 #ff4d5500}}
+@keyframes ffSpin{0%,80%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+html:not(.iconMotionEnabled) :is(.ffSportMark,.ffLiveMark i,.ffDot){animation:none}
+
+/* Scoreboard rows */
+html body[data-book="6"] .bookLayout .ffRow{position:relative;gap:12px;padding:12px 14px 14px;overflow:hidden;border:1px solid #23474f;border-radius:14px;background:radial-gradient(120% 80% at 50% 0%,#17414a 0%,#10262e 55%,#0d2027 100%);transition:transform .15s,border-color .15s,box-shadow .15s}
+html body[data-book="6"] .bookLayout .ffRow::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,transparent,#9fe8d8,transparent)}
+html body[data-book="6"] .bookLayout .ffRow.ffLive::before{background:linear-gradient(90deg,transparent,#ff4d55,transparent)}
+html body[data-book="6"] .bookLayout .ffRow:hover{transform:translateY(-2px);border-color:#4f8f93;box-shadow:0 10px 26px #0008}
+html body[data-book="6"] .bookLayout .ffRow>a{display:grid;gap:8px;padding-right:0;color:inherit;text-decoration:none}
+.ffTop{display:flex;align-items:center;gap:7px;padding-right:26px;min-height:20px}
+.ffTop .badge,.ffTop small{font-size:12px}
+.ffSport{font-size:14px;line-height:1}
+.ffFace{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px}
+.ffTeam{display:grid;justify-items:center;gap:6px;min-width:0;text-align:center}
+.ffTeam b{max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:700 15px/1.15 "Bahnschrift","Segoe UI",sans-serif;color:#f2fffc}
+.ffPennant{display:grid;place-items:center;width:40px;height:44px}
+.ffPennant>*{transform:scale(1.35)}
+.ffMid{display:grid;justify-items:center;gap:4px;min-width:64px}
+.ffScore{display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 12px;border-radius:12px;background:#07161b;border:1px solid #2f5b62;box-shadow:inset 0 0 14px #9fe8d81a}
+.ffScore em{font:800 26px/1 "Bahnschrift","Segoe UI",sans-serif;font-style:normal;color:#fff;min-width:16px;text-align:center}
+.ffScore i{font-style:normal;color:#5f8a8e;font:700 18px/1 "Bahnschrift",sans-serif}
+.ffScore small{font:700 12px "Segoe UI",sans-serif;color:#cfe9ea}
+.ffLive .ffScore{border-color:#7a3a40;box-shadow:inset 0 0 16px #ff4d5522}
+.ffVs{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(180deg,#d9fbf5,#9fe8d8);color:#06232a;font:900 13px/1 "Bahnschrift","Segoe UI",sans-serif;font-style:normal;box-shadow:0 4px 14px #9fe8d833}
+.ffMid small{color:#9fc7c0;font:700 12px "Bahnschrift","Segoe UI",sans-serif}
+html body[data-book="6"] .ffRow .fixtureStar{position:absolute;top:10px;right:12px;z-index:1}
+
+/* Match page fixture strip */
+html body[data-book="6"] .fixtureStrip{gap:10px;padding:4px 2px 10px;margin-top:12px}
+html body[data-book="6"] .fixtureStrip a.ffChip{display:grid;gap:5px;min-width:190px;padding:10px 12px;border:1px solid #23474f;border-radius:14px;background:linear-gradient(160deg,#16363f,#0d2128);color:#eefcf9;text-decoration:none;transition:transform .15s,border-color .15s,box-shadow .15s}
+html body[data-book="6"] .fixtureStrip a.ffChip:hover{transform:translateY(-2px);border-color:#9fe8d8;box-shadow:0 8px 20px #0007}
+html body[data-book="6"] .fixtureStrip a.ffChip.active{background:linear-gradient(160deg,#d9fbf5,#a3ecdf);border-color:#d9fbf5;color:#06232a;box-shadow:0 8px 22px #9fe8d840}
+.ffChipHead{display:flex;align-items:center;gap:6px;font:800 10.5px/1 "Segoe UI",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#9fc7c0}
+.ffChipHead span{margin-left:auto;font-weight:600;letter-spacing:.02em;text-transform:none;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.ffChipLive .ffChipHead{color:#ff7a80}
+.ffChip .ffDot{width:7px;height:7px}
+.ffChipRow{display:flex;align-items:center;gap:7px;min-width:0}
+.ffChipRow .clubShield.sm{margin:0!important}
+.ffChipRow .ffPennant{width:22px;height:24px}.ffChipRow .ffPennant>*{transform:none}
+.ffChipRow b{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:700 14px/1.1 "Bahnschrift","Segoe UI",sans-serif}
+.ffChipRow em{font:800 16px/1 "Bahnschrift","Segoe UI",sans-serif;font-style:normal}
+.fixtureStrip a.ffChip.active :is(.ffChipHead,.ffChipLive .ffChipHead){color:#1f5a57}
+/* Single-match competition columns are narrow: keep the title, drop the extras. */
+html body[data-book="6"] .ffGroup[data-n="1"]>header :is(.ffCount,small){display:none}
+html body[data-book="6"] .ffGroup>header h2{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}

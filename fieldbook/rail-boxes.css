@@ -1,0 +1,180 @@
+/* Sidebar sport boxes (rail-boxes.js): one outlined box per area, compact tiles inside, icons in their own frame. */
+html body[data-book="6"] .rbGroup{margin:10px 0;padding:8px;border:1px solid #27525a;border-radius:14px;background:linear-gradient(180deg,#0f262e,#0a1c22);box-shadow:inset 0 1px 0 #ffffff08}
+html body[data-book="6"] .rbGroup[data-area="Racing"]{border-color:#5a4a2a;background:linear-gradient(180deg,#1b2420,#0d1b1f)}
+html body[data-book="6"] .rbGroup[data-area="Esports"]{border-color:#3d3a6a;background:linear-gradient(180deg,#161d33,#0c1923)}
+html body[data-book="6"] .rbGroup[data-area="Pinned"]{border-color:#6a5a26}
+html body[data-book="6"] .rbHead{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:0 0 6px;padding:2px 4px 6px;border-bottom:1px solid #ffffff10}
+html body[data-book="6"] .rbHead>span{font:800 12px/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#9fe8d8}
+html body[data-book="6"] .rbGroup[data-area="Racing"] .rbHead>span{color:#f6d26b}
+html body[data-book="6"] .rbGroup[data-area="Esports"] .rbHead>span{color:#b9a8ff}
+html body[data-book="6"] .rbHead .openDirectory{width:auto!important;min-height:0!important;height:26px;padding:0 10px!important;border:1px solid #2f5b62!important;border-radius:999px!important;background:#0d242b!important;font:700 11.5px/1 "Segoe UI",sans-serif!important;color:#d9fbf5}
+html body[data-book="6"] .rbHead .openDirectory :is(svg,.toolbarMark,i){display:none}
+html body[data-book="6"] .rbGrid{display:grid;gap:4px}
+html body[data-book="6"] .railDirectory .rbItem{display:grid!important;grid-template-columns:40px minmax(0,1fr);align-items:center;gap:9px;min-height:38px!important;height:38px;padding:3px 8px 3px 3px!important;border:1px solid transparent!important;border-radius:10px!important;background:#ffffff05!important;box-shadow:none!important;transition:background .15s,border-color .15s}
+html body[data-book="6"] .railDirectory .rbItem:hover{background:#143039!important;border-color:#2f5b62!important}
+html body[data-book="6"] .railDirectory .rbItem:is(.active,[aria-pressed="true"],[aria-current]){background:#163c44!important;border-color:#9fe8d8!important}
+html body[data-book="6"] .railDirectory .rbItem .sportIcon,html body[data-book="6"] .railDirectory .rbItem>svg:first-child{width:40px!important;height:30px!important;margin:0!important;border-radius:7px;background:#0a1a20;overflow:visible}
+html body[data-book="6"] .railDirectory .rbItem>span{font:600 13.5px/1.15 "Segoe UI",sans-serif!important;-webkit-line-clamp:1!important}
+html body[data-book="6"] .railDirectory.iconsOnly .rbItem{grid-template-columns:40px}
+html body[data-book="6"] .rbGroup,html body[data-book="6"] .rbGroup *{box-sizing:border-box}
+html body[data-book="6"] .rbGroup{width:auto;max-width:100%;margin:10px 0;min-width:0}
+html body[data-book="6"] .rbGrid{min-width:0}
+html body[data-book="6"] .railDirectory .rbItem{width:100%!important;max-width:100%;min-width:0;height:auto;min-height:38px!important}
+html body[data-book="6"] .railDirectory .rbItem>span{-webkit-line-clamp:2!important;font-size:13px!important}
+/* All sports: a grid icon so the button reads in both widths. */
+html body[data-book="6"] .rbHead .openDirectory{display:inline-flex!important;align-items:center;gap:6px}
+html body[data-book="6"] .rbHead .openDirectory .rbAllIcon{display:block!important;width:13px;height:13px;fill:#9fe8d8;flex:none}
+/* Smooth width change */
+html body[data-book="6"] #productSidebar{transition:width .2s ease,padding .2s ease}
+html body[data-book="6"] .rbGroup,html body[data-book="6"] .railDirectory .rbItem{transition:padding .2s ease,margin .2s ease,background .15s,border-color .15s}
+/* Collapsed sidebar (68px): one centred column, icons full size, a short area tag on each box. */
+html.sidebarHidden body[data-book="6"] .rbGroup{margin:8px 0;padding:6px 3px 4px;border-radius:12px}
+html.sidebarHidden body[data-book="6"] .rbHead{flex-direction:column;justify-content:center;gap:5px;margin:0 0 4px;padding:0 0 5px}
+html.sidebarHidden body[data-book="6"] .rbHead::before{content:attr(data-short);font:800 8.5px/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#9fe8d8}
+html.sidebarHidden body[data-book="6"] .rbGroup[data-area="Racing"] .rbHead::before{color:#f6d26b}
+html.sidebarHidden body[data-book="6"] .rbGroup[data-area="Esports"] .rbHead::before{color:#b9a8ff}
+html.sidebarHidden body[data-book="6"] .rbHead .openDirectory{width:44px!important;height:30px;padding:0!important;justify-content:center;border-radius:9px!important}
+html.sidebarHidden body[data-book="6"] .rbHead .openDirectory .rbAllIcon{width:16px;height:16px}
+html.sidebarHidden body[data-book="6"] .rbGrid{justify-items:center;gap:3px}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbItem{grid-template-columns:44px;justify-content:center;width:52px!important;min-height:38px!important;padding:2px!important}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbItem .sportIcon,html.sidebarHidden body[data-book="6"] .railDirectory .rbItem>svg:first-child{width:44px!important;height:33px!important}
+/* ---- Top sports + league dropdowns ---- */
+html body[data-book="6"] .rbTop{border-color:#2f6a64}
+html body[data-book="6"] .rbFlame{font-style:normal;font-size:13px;line-height:1}
+html body[data-book="6"] .rbRow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;border:1px solid transparent;border-radius:10px;background:#ffffff05;transition:background .15s,border-color .15s}
+html body[data-book="6"] .rbRow:hover{background:#143039;border-color:#2f5b62}
+html body[data-book="6"] .rbRow:has(.rbItem[aria-pressed="true"]),html body[data-book="6"] .rbRow.rbOpen{background:#122f37;border-color:#2f6a72}
+html body[data-book="6"] .railDirectory .rbRow .rbItem{background:transparent!important;border:0!important}
+html body[data-book="6"] .railDirectory .rbRow .rbItem:hover{background:transparent!important}
+html body[data-book="6"] .rbExpand{display:grid;place-items:center;width:28px;height:28px;margin-right:5px;padding:0;border:1px solid #2f5b62;border-radius:8px;background:#0a1c22;color:#9fc7c0;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+html body[data-book="6"] .rbExpand:hover{color:#fff;border-color:#9fe8d8}
+html body[data-book="6"] .rbExpand svg{width:15px;height:15px;transition:transform .2s ease}
+html body[data-book="6"] .rbOpen .rbExpand{background:#9fe8d8;border-color:#9fe8d8;color:#06232a}
+html body[data-book="6"] .rbOpen .rbExpand svg{transform:rotate(180deg)}
+html body[data-book="6"] .rbLeagues{grid-column:1/-1;display:none;gap:2px;margin:0 6px 6px;padding:5px 0 0;border-top:1px solid #ffffff12}
+html body[data-book="6"] .rbOpen .rbLeagues{display:grid;animation:rbDrop .18s ease-out}
+@keyframes rbDrop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+html body[data-book="6"] .railDirectory .rbLeague{display:grid!important;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:8px;width:100%!important;min-height:32px!important;height:32px;padding:0 6px!important;border:0!important;border-radius:8px!important;background:transparent!important;color:#cfe9ea;text-align:left;cursor:pointer}
+html body[data-book="6"] .railDirectory .rbLeague:hover,html body[data-book="6"] .railDirectory .rbLeague.on{background:#183a44!important;color:#fff}
+html body[data-book="6"] .railDirectory .rbLeague>span:not(.rbLeagueLogo){font:600 12.5px/1.1 "Segoe UI",sans-serif!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block!important}
+html body[data-book="6"] .rbLeagueLogo{display:grid!important;place-items:center;width:22px;height:22px;border-radius:6px;background:#fff;overflow:hidden}
+html body[data-book="6"] .rbLeagueLogo img{width:17px;height:17px;object-fit:contain}
+html body[data-book="6"] .rbLeagueDot{background:#1d4a52;color:#d9fbf5;font:800 10px/1 "Segoe UI",sans-serif}
+html body[data-book="6"] .rbLeague em{min-width:20px;height:18px;padding:0 6px;display:inline-grid;place-items:center;border-radius:999px;background:#1d4a52;color:#d9fbf5;font:800 10.5px/1 "Segoe UI",sans-serif;font-style:normal}
+html body[data-book="6"] .rbLeague em.rbLive{background:#ff4d55;color:#fff}
+/* All sports button, last in the Top sports box */
+html body[data-book="6"] .railDirectory .rbAll{display:grid!important;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:9px;width:100%!important;min-height:38px!important;margin-top:4px;padding:3px 10px 3px 3px!important;border:1px dashed #3a6a70!important;border-radius:10px!important;background:#0a1c22!important;color:#d9fbf5;cursor:pointer}
+html body[data-book="6"] .railDirectory .rbAll:hover{border-style:solid!important;border-color:#9fe8d8!important;background:#143039!important}
+html body[data-book="6"] .railDirectory .rbAll .rbAllIcon{display:block!important;justify-self:center;width:18px;height:18px;fill:#9fe8d8}
+html body[data-book="6"] .railDirectory .rbAll>span{display:block!important;font:700 13px/1 "Segoe UI",sans-serif!important}
+html body[data-book="6"] .railDirectory .rbAll .rbAllGo{width:14px;height:14px;color:#9fc7c0}
+html body[data-book="6"] .railDirectory .rbAll :is(.toolbarMark,.utilityMark){display:none}
+/* Collapsed: no dropdowns; All sports is the grid icon */
+html.sidebarHidden body[data-book="6"] :is(.rbExpand,.rbLeagues,.rbFlame,.rbAll .rbAllGo){display:none!important}
+html.sidebarHidden body[data-book="6"] .rbRow{grid-template-columns:1fr;justify-items:center;width:52px;background:transparent;border-color:transparent}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbAll{grid-template-columns:1fr;width:52px!important;padding:0!important;justify-items:center}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbAll>span{display:none!important}
+/* Older sidebar rules dim unselected buttons and restyle every sidebar button; keep the dropdown parts crisp. */
+html body[data-book="6"] .railDirectory :is(.rbLeague,.rbExpand,.rbAll){opacity:1!important;filter:none!important}
+html body[data-book="6"] .railDirectory .rbLeague *{opacity:1!important}
+html body[data-book="6"] .railDirectory .rbExpand{min-height:0!important;width:28px!important;height:28px!important;padding:0!important;background:#0a1c22!important;border:1px solid #2f5b62!important;border-radius:8px!important;color:#9fc7c0!important;box-shadow:none!important}
+html body[data-book="6"] .railDirectory .rbExpand svg{display:block!important;width:15px!important;height:15px!important}
+html body[data-book="6"] .railDirectory .rbExpand:hover{border-color:#9fe8d8!important;color:#fff!important}
+html body[data-book="6"] .railDirectory .rbOpen .rbExpand{background:#9fe8d8!important;border-color:#9fe8d8!important;color:#06232a!important}
+/* ---- v6: slim headers, Browse categories ---- */
+html body[data-book="6"] .rbGroup>.rbHead{position:static!important;height:auto!important;min-height:0!important;margin:0 0 6px!important;padding:2px 4px 7px!important;background:none!important;border:0;border-bottom:1px solid #ffffff10!important;box-shadow:none!important;backdrop-filter:none!important}
+html body[data-book="6"] .rbBrowse{border-color:#2c4f57}
+html body[data-book="6"] .rbBrowse .rbHead>span{color:#cfe9ea}
+html body[data-book="6"] .rbCat{border-radius:10px;background:#ffffff05;border:1px solid transparent}
+html body[data-book="6"] .rbCat+.rbCat{margin-top:4px}
+html body[data-book="6"] .rbCat.rbCatOpen{background:#0d242b;border-color:#2c5a62}
+html body[data-book="6"] .railDirectory .rbCatHead{display:grid!important;grid-template-columns:40px minmax(0,1fr) auto 22px;align-items:center;gap:9px;width:100%!important;min-height:38px!important;height:38px;padding:3px 8px 3px 3px!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#eefcf9;text-align:left;cursor:pointer;opacity:1!important}
+html body[data-book="6"] .railDirectory .rbCatHead:hover{background:#143039!important}
+html body[data-book="6"] .rbCatIcon{display:grid!important;place-items:center;width:40px;height:30px;border-radius:7px;background:#0a1a20}
+html body[data-book="6"] .rbCatIcon svg{width:18px;height:18px;fill:#9fe8d8;color:#9fe8d8}
+html body[data-book="6"] .rbCatEsports .rbCatIcon svg{fill:#b9a8ff}
+html body[data-book="6"] .rbCatRacing .rbCatIcon svg{fill:#f6d26b;color:#f6d26b}
+html body[data-book="6"] .railDirectory .rbCatLabel{display:block!important;font:700 13.5px/1.1 "Segoe UI",sans-serif!important}
+html body[data-book="6"] .rbCatHead em{min-width:22px;height:18px;padding:0 6px;display:inline-grid!important;place-items:center;border-radius:999px;background:#1d4a52;color:#d9fbf5;font:800 10.5px/1 "Segoe UI",sans-serif;font-style:normal}
+html body[data-book="6"] .rbCatChevron{display:grid!important;place-items:center;color:#9fc7c0}
+html body[data-book="6"] .rbCatChevron svg{width:15px;height:15px;transition:transform .2s ease}
+html body[data-book="6"] .rbCatOpen .rbCatChevron svg{transform:rotate(180deg)}
+html body[data-book="6"] .rbCatList{display:none;gap:3px;padding:2px 4px 6px}
+html body[data-book="6"] .rbCatOpen .rbCatList{display:grid;animation:rbDrop .18s ease-out}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbCatHead{grid-template-columns:1fr;justify-items:center;width:52px!important;padding:2px!important}
+html.sidebarHidden body[data-book="6"] :is(.rbCatLabel,.rbCatHead em,.rbCatChevron,.rbCatList){display:none!important}
+html.sidebarHidden body[data-book="6"] .rbCat{background:transparent;border-color:transparent}
+/* Homepage sport bar arrows: small round buttons instead of tall slabs */
+html body[data-book="6"] .sportBar>button[aria-label$="sports"]:not(.openDirectory){flex:none;align-self:center;display:grid;place-items:center;width:32px!important;min-width:32px;height:32px!important;min-height:0!important;padding:0 0 2px!important;border:1px solid #2f5b62!important;border-radius:50%!important;background:#0d242b!important;color:#cfe9ea;font:400 20px/1 system-ui,sans-serif!important;box-shadow:none!important}
+html body[data-book="6"] .sportBar>button[aria-label$="sports"]:not(.openDirectory):hover{border-color:#9fe8d8!important;color:#fff;background:#143039!important}
+/* ---- Collapsed-sidebar hover flyout (#rbFly) ---- */
+#rbFly{position:fixed;z-index:60;width:300px;max-height:min(70vh,560px);overflow:auto;padding:0 0 8px;border:1px solid #2f6a72;border-radius:14px;background:linear-gradient(180deg,#132d36,#0b1d23);box-shadow:0 18px 40px #000a;color:#eefcf9;font-family:"Segoe UI",sans-serif;animation:rbFlyIn .14s ease-out;scrollbar-width:thin}
+#rbFly[hidden]{display:none}
+@keyframes rbFlyIn{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+#rbFly,#rbFly *{box-sizing:border-box}
+#rbFly header{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:10px;padding:10px 12px;background:#132d36f2;border-bottom:1px solid #24464e}
+#rbFly header .sportIcon,#rbFly header>svg{width:40px!important;height:30px!important;flex:none;border-radius:7px;background:#0a1a20}
+#rbFly header strong{font:800 16px/1 "Bahnschrift","Segoe UI",sans-serif}
+#rbFly .rbFlyBody{display:grid;gap:8px;padding:8px}
+#rbFly .rbFlyLeague{display:grid;gap:3px;padding:4px;border:1px solid #23474f;border-radius:11px;background:#0a1c22}
+#rbFly button{font-family:inherit;color:inherit;cursor:pointer;transform:none!important}
+#rbFly .rbFlyLeagueHead{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:8px;height:34px;padding:0 6px;border:0;border-radius:8px;background:#102a31;text-align:left}
+#rbFly .rbFlyLeagueHead:hover{background:#183a44}
+#rbFly .rbFlyLeagueHead span:not(.rbLeagueLogo){font:700 13px/1.1 "Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rbFly .rbLeagueLogo{display:grid;place-items:center;width:22px;height:22px;border-radius:6px;background:#fff;overflow:hidden}
+#rbFly .rbLeagueLogo img{width:17px;height:17px;object-fit:contain}
+#rbFly .rbLeagueDot{background:#1d4a52;color:#d9fbf5;font:800 10px/1 "Segoe UI",sans-serif}
+#rbFly em{padding:3px 7px;border-radius:999px;background:#1d4a52;color:#d9fbf5;font:800 10.5px/1 "Segoe UI",sans-serif;font-style:normal;white-space:nowrap}
+#rbFly em.rbLive{background:#ff4d55;color:#fff}
+#rbFly .rbFlyGame{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:6px 8px;border:0;border-radius:8px;background:transparent;text-align:left}
+#rbFly .rbFlyGame:hover{background:#143039}
+#rbFly .rbFlyTeams{display:grid;gap:3px;min-width:0}
+#rbFly .rbFlyTeams>span{display:flex;align-items:center;gap:6px;min-width:0}
+#rbFly .rbFlyTeams b{font:600 12.5px/1.15 "Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rbFly .rbFlyTeams .clubShield{width:16px!important;height:16px!important;margin:0!important;flex:none}
+#rbFly .rbFlyWhen{display:flex;align-items:center;gap:5px;color:#9fc7c0;font:700 12px/1 "Bahnschrift","Segoe UI",sans-serif;white-space:nowrap}
+#rbFly .rbFlyGame.live .rbFlyWhen{color:#fff;font-size:13.5px}
+#rbFly .rbFlyWhen i{width:7px;height:7px;border-radius:50%;background:#ff4d55;box-shadow:0 0 0 3px #ff4d5533}
+#rbFly .rbFlySports{gap:3px}
+#rbFly .rbFlySport{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:9px;height:38px;padding:3px 8px 3px 3px;border:0;border-radius:9px;background:#ffffff05;text-align:left}
+#rbFly .rbFlySport:hover{background:#143039}
+#rbFly .rbFlySport .sportIcon,#rbFly .rbFlySport>svg{width:40px!important;height:30px!important;border-radius:7px;background:#0a1a20}
+#rbFly .rbFlySport span{font:600 13px/1.1 "Segoe UI",sans-serif}
+#rbFly .rbCatIcon{display:grid;place-items:center;width:40px;height:30px;border-radius:7px;background:#0a1a20}
+#rbFly .rbCatIcon svg{width:18px;height:18px;fill:#9fe8d8;color:#9fe8d8}
+#rbFly .rbFlyAll{display:block;width:calc(100% - 16px);margin:2px 8px 0;height:36px;border:1px dashed #3a6a70;border-radius:10px;background:#0a1c22;font:700 12.5px/1 "Segoe UI",sans-serif}
+#rbFly .rbFlyAll:hover{border-style:solid;border-color:#9fe8d8}
+#rbFly .rbFlyNone{margin:6px;color:#9fc7c0;font-size:13px}
+html body[data-book="6"] #productSidebar .rbRow:hover{background:#143039}
+/* Keep tiles and labels at full strength, but never touch the icon drawings: their animations use opacity
+   (motion trails, balls that appear on release), and an !important opacity here froze them visible. */
+html body[data-book="6"] .railDirectory :is(.rbItem,.rbItem>span,.rbItem>svg,.rbCatHead,.rbCatHead>span){opacity:1!important}
+html body[data-book="6"] .railDirectory .rbCatHead{gap:7px;grid-template-columns:40px minmax(0,1fr) auto 18px}
+html body[data-book="6"] .railDirectory .rbCatLabel{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px!important}
+html body[data-book="6"] .rbCatHead em{display:none!important}
+html body[data-book="6"] .railDirectory .rbCatHead{grid-template-columns:40px minmax(0,1fr) 18px}
+@keyframes rbDrop{from{transform:translateY(-4px)}to{transform:none}}
+/* ---- Flyout v2: pops off the sidebar (lighter teal panel, mint edge and glow), bold name header ---- */
+#rbFly{width:310px;border:1.5px solid #9fe8d8;background:linear-gradient(180deg,#1f4f5a 0%,#173f49 40%,#12333c 100%);box-shadow:0 22px 50px #000c,0 0 0 4px #9fe8d81f,0 0 28px #9fe8d82e}
+#rbFly::before{content:"";position:absolute;left:-7px;top:22px;width:12px;height:12px;background:#1f4f5a;border-left:1.5px solid #9fe8d8;border-bottom:1.5px solid #9fe8d8;transform:rotate(45deg)}
+#rbFly header{justify-content:space-between;padding:12px 14px;background:linear-gradient(90deg,#9fe8d8,#6fd3c3);border-bottom:0}
+#rbFly header strong{color:#06232a;font:900 19px/1 "Bahnschrift","Segoe UI",sans-serif;letter-spacing:.01em}
+#rbFly .rbFlyMeta{display:flex;gap:5px}
+#rbFly header em{background:#06232a;color:#b4eee4}
+#rbFly header em.rbLive{background:#ff4d55;color:#fff}
+#rbFly .rbFlyLeague{background:#0e2a32;border-color:#2f6a72}
+#rbFly .rbFlyLeagueHead{background:#163c44}
+#rbFly .rbFlyGame:hover,#rbFly .rbFlySport:hover{background:#1d4a55}
+#rbFly .rbFlySport{background:#ffffff0a}
+/* ---- Collapsed sidebar: room for the icons (no squish) ---- */
+html.sidebarHidden body[data-book="6"] .rbGroup{padding:5px 2px 4px;margin:6px 0;border-radius:10px}
+html.sidebarHidden body[data-book="6"] .rbGrid{gap:2px}
+html.sidebarHidden body[data-book="6"] .rbRow{width:100%!important;max-width:none;justify-items:center;border-radius:8px}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbRow .rbItem{grid-template-columns:1fr!important;justify-items:center;width:100%!important;min-height:40px!important;height:40px;padding:3px 0!important}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbRow .rbItem .sportIcon,html.sidebarHidden body[data-book="6"] .railDirectory .rbRow .rbItem>svg:first-child{width:48px!important;height:34px!important;border-radius:6px;overflow:visible}
+html.sidebarHidden body[data-book="6"] .railDirectory .rbCatHead{width:100%!important;justify-items:center}
+html.sidebarHidden body[data-book="6"] .rbCatIcon{width:44px;height:32px}
+/* League logos: no white box; the logo sits on a soft see-through tile with a light glow so dark marks still read */
+html body[data-book="6"] :is(.railDirectory,#rbFly) .rbLeagueLogo:not(.rbLeagueDot){background:#ffffff14!important;border:1px solid #ffffff22;box-shadow:inset 0 1px 0 #ffffff14}
+html body[data-book="6"] :is(.railDirectory,#rbFly) .rbLeagueLogo img{width:18px!important;height:18px!important;filter:drop-shadow(0 0 1px #ffffffd9) drop-shadow(0 0 3px #ffffff40)}
+html body[data-book="6"] :is(.railDirectory,#rbFly) .rbLeagueLogo img{filter:drop-shadow(0 0 .7px #fff) drop-shadow(0 0 .7px #fff) drop-shadow(0 0 4px #ffffff55)}

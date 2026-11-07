@@ -1,0 +1,122 @@
+/* Beta v2 Hubie kits: tall poses stand on the card's pitch instead of a framed photo */
+.footballRoster .portraitLayer svg.hubieKit{opacity:1!important;left:0;right:0;width:100%!important;filter:drop-shadow(0 5px 6px #000a)}
+#playerCard .pcPhoto:has(.pcHubie){background:radial-gradient(ellipse at 50% 85%,color-mix(in srgb,var(--club) 55%,#0d1e27),#0d1e27 70%)}
+#playerCard .pcHubie{display:block;width:100%;height:100%;padding:6px 4px 0}
+#playerCard .pcHubie svg{width:100%;height:100%;display:block}
+/* Give Hubie more of the frame: the hat may rise above the frame edge */
+html body[data-book="6"] .footballRoster .portraitLayer svg.hubieKit{height:calc(100% - 30px)!important;top:-10px!important;overflow:visible}
+html body[data-book="6"] .footballRoster,html body[data-book="6"] .footballRoster .portraitLayer{overflow:visible!important}
+/* Hubie kit loops (hubie-kits.js): striker kicks the ball away and it rolls back, juggler keeps the ball up,
+   keeper shuffles and catches a shot. Only with the Animations switch on, only while on screen (.hkLive),
+   and only on the player currently shown in a rotating card. --kd staggers each kit. */
+svg.hubieKit{overflow:visible}
+svg.hubieKit .hkBody,svg.hubieKit .hkBall{transform-box:fill-box}
+svg.hk-striker .hkBody{transform-origin:42% 100%}
+svg.hk-juggler .hkBody{transform-origin:60% 100%}
+svg.hk-keeper .hkBody{transform-origin:50% 100%}
+svg.hubieKit .hkBall{transform-origin:50% 50%}
+svg.hk-keeper .hkBall{opacity:0}
+html.iconMotionEnabled svg.hk-striker.hkLive .hkBody{animation:hk-strike-body 2.6s var(--kd,0s) infinite ease-in-out}
+html.iconMotionEnabled svg.hk-striker.hkLive .hkBall{animation:hk-strike-ball 2.6s var(--kd,0s) infinite linear}
+html.iconMotionEnabled svg.hk-juggler.hkLive .hkBody{animation:hk-jug-body 1.5s var(--kd,0s) infinite ease-out}
+html.iconMotionEnabled svg.hk-juggler.hkLive .hkBall{animation:hk-jug-ball 1.5s var(--kd,0s) infinite}
+html.iconMotionEnabled svg.hk-keeper.hkLive .hkBody{animation:hk-keep-body 3s var(--kd,0s) infinite ease-in-out}
+html.iconMotionEnabled svg.hk-keeper.hkLive .hkBall{animation:hk-keep-ball 3s var(--kd,0s) infinite ease-out}
+html.iconMotionEnabled .portraitLayer:not(.shown) svg.hubieKit *{animation:none!important}
+@keyframes hk-strike-body{0%,42%,100%{transform:none}18%{transform:rotate(3deg)}28%{transform:translateX(3px) rotate(-3deg)}}
+@keyframes hk-strike-ball{
+  0%,27%{transform:none;opacity:1}
+  29%{transform:translate(5px,-3px) scale(.96);opacity:1;animation-timing-function:cubic-bezier(.2,.7,.4,1)}
+  50%{transform:translate(85px,-60px) rotate(330deg) scale(.55);opacity:0}
+  72%{transform:translate(55px,0) rotate(70deg);opacity:0}
+  76%{transform:translate(50px,0) rotate(64deg);opacity:1;animation-timing-function:cubic-bezier(.3,.6,.5,1)}
+  100%{transform:none;opacity:1}}
+@keyframes hk-jug-body{0%,100%{transform:translateY(-5px) rotate(-1.5deg)}24%,86%{transform:none}}
+@keyframes hk-jug-ball{
+  0%{transform:none;animation-timing-function:cubic-bezier(.2,.65,.45,1)}
+  50%{transform:translateY(-64px) rotate(-170deg);animation-timing-function:cubic-bezier(.55,0,.8,.35)}
+  100%{transform:rotate(-360deg)}}
+@keyframes hk-keep-body{0%,52%,100%{transform:none}18%{transform:translateX(-7px) rotate(-2deg)}36%{transform:translateX(4px) rotate(1deg)}58%{transform:translateY(-9px)}66%{transform:none}82%{transform:translateX(6px) rotate(2deg)}}
+@keyframes hk-keep-ball{
+  0%,38%{transform:translate(-150px,-140px) scale(.25);opacity:0}
+  42%{opacity:1}
+  56%{transform:rotate(-240deg);opacity:1}
+  58%{transform:translateY(-9px) rotate(-240deg);opacity:1}
+  66%{transform:rotate(-240deg);opacity:1}
+  74%,100%{transform:translateY(6px) rotate(-240deg) scale(.9);opacity:0}}
+
+/* Fixture duel (hubie-kits.js duelSide/place). Plays only with .hkPlay: always on the match page header, and on fixture
+   cards only while hovered, starting from the kick (--hk0); otherwise both stand ready with the ball at the home feet. One 5.4 s loop per card, home half first:
+   0%    ball arrives, home takes it on the chest (trap pose, leaning back)
+   6-22% three touches on the knee (juggle pose on each touch, ready pose at the top of each bounce)
+   24-29% plants (trap) and strikes it (strike pose) at 29%, then the follow-through
+   29-50% ball flies over the score to the away chest; 50-100% the same, mirrored.
+   The away Hubie runs the home timeline half a loop later and is mirrored to face home.
+   Ball positions come from --h*/--a* px variables set on .hkDuelBall by place(). */
+svg.hkDuel .hkBody{transform-origin:45% 100%}
+svg.hkDuel.hkSide1{transform:scaleX(-1)}
+svg.hkDuel .hkPose{opacity:0}
+svg.hkDuel .hkPose-ready{opacity:1}
+.hkDuelBall{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;z-index:4}
+.hkDuelBall .hkdX{position:absolute;left:0;top:0;transform:translateX(var(--hsx,-999px))}
+.hkDuelBall .hkdY{position:absolute;left:0;top:0;transform:translateY(var(--hsy,0))}
+.hkDuelBall .hkdSpin{position:absolute;display:block;width:var(--bs,24px);height:var(--bs,24px);left:calc(var(--bs,24px) / -2);top:calc(var(--bs,24px) / -2);filter:drop-shadow(0 3px 3px #0008);max-width:none}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel .hkBody{animation:hkd-body 5.4s var(--hk0,0s) infinite ease-in-out}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel .hkPose-trap{animation:hkd-trap 5.4s var(--hk0,0s) infinite step-end}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel .hkPose-juggle{animation:hkd-juggle 5.4s var(--hk0,0s) infinite step-end}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel .hkPose-ready{animation:hkd-ready 5.4s var(--hk0,0s) infinite step-end}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel .hkPose-strike{animation:hkd-strike 5.4s var(--hk0,0s) infinite step-end}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel .hkPose-follow{animation:hkd-follow 5.4s var(--hk0,0s) infinite step-end}
+html.iconMotionEnabled .hkDuelLive.hkPlay svg.hkDuel.hkSide1 :is(.hkBody,.hkPose){animation-delay:calc(var(--hk0,0s) - 2.7s)}
+html.iconMotionEnabled .hkDuelLive.hkPlay .hkDuelBall .hkdX{animation:hkd-x 5.4s var(--hk0,0s) infinite linear}
+html.iconMotionEnabled .hkDuelLive.hkPlay .hkDuelBall .hkdY{animation:hkd-y 5.4s var(--hk0,0s) infinite}
+html.iconMotionEnabled .hkDuelLive.hkPlay .hkDuelBall .hkdSpin{animation:hkd-r 5.4s var(--hk0,0s) infinite linear}
+@keyframes hkd-trap{0%{opacity:1}4%{opacity:0}24%{opacity:1}27%{opacity:0}96%{opacity:1}100%{opacity:1}}
+@keyframes hkd-juggle{0%{opacity:0}4%{opacity:1}8%{opacity:0}12%{opacity:1}16%{opacity:0}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
+@keyframes hkd-ready{0%{opacity:0}8%{opacity:1}12%{opacity:0}16%{opacity:1}20%{opacity:0}40%{opacity:1}96%{opacity:0}100%{opacity:0}}
+@keyframes hkd-strike{0%{opacity:0}27%{opacity:1}31%{opacity:0}100%{opacity:0}}
+@keyframes hkd-follow{0%{opacity:0}31%{opacity:1}40%{opacity:0}100%{opacity:0}}
+/* Body, in drawing units: lean back on the chest trap, a hop on each knee touch, step into the kick, lean back on
+   the follow-through, a small bounce while the other side plays, brace as the ball comes back. */
+@keyframes hkd-body{
+  0%,100%{transform:translateX(-8px) rotate(-7deg)}
+  4%,8%,16%,24%,42%,66%,84%{transform:none}
+  6%,14%,22%{transform:translateY(-9px)}
+  27%{transform:translateX(6px) rotate(3deg)}
+  29%{transform:translateX(12px) rotate(4deg)}
+  34%{transform:translateX(10px) rotate(-5deg)}
+  60%,78%{transform:translateY(-4px)}
+  96%{transform:translateX(-3px) rotate(-2deg)}}
+@keyframes hkd-x{
+  0%{transform:translateX(var(--hcx))}
+  6%,22%{transform:translateX(var(--hkx))}
+  29%{transform:translateX(var(--hsx))}
+  50%{transform:translateX(var(--acx))}
+  56%,72%{transform:translateX(var(--akx))}
+  79%{transform:translateX(var(--asx))}
+  100%{transform:translateX(var(--hcx))}}
+/* Rising segments ease out, falling ones ease in, so the ball reads as thrown and dropping. */
+@keyframes hkd-y{
+  0%{transform:translateY(var(--hcy));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  6%{transform:translateY(var(--hky));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  10%{transform:translateY(calc(var(--hky) - var(--jh)));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  14%{transform:translateY(var(--hky));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  18%{transform:translateY(calc(var(--hky) - var(--jh)));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  22%{transform:translateY(var(--hky));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  25.5%{transform:translateY(calc(var(--hky) - var(--jh) * .5));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  29%{transform:translateY(var(--hsy));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  39.5%{transform:translateY(var(--fy));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  50%{transform:translateY(var(--acy));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  56%{transform:translateY(var(--aky));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  60%{transform:translateY(calc(var(--aky) - var(--jh)));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  64%{transform:translateY(var(--aky));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  68%{transform:translateY(calc(var(--aky) - var(--jh)));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  72%{transform:translateY(var(--aky));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  75.5%{transform:translateY(calc(var(--aky) - var(--jh) * .5));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  79%{transform:translateY(var(--asy));animation-timing-function:cubic-bezier(.2,.6,.45,1)}
+  89.5%{transform:translateY(var(--fy));animation-timing-function:cubic-bezier(.55,0,.8,.45)}
+  100%{transform:translateY(var(--hcy))}}
+/* Spin: slow on the juggles, fast clockwise flying right, fast anticlockwise flying back (ends on a whole turn). */
+@keyframes hkd-r{0%{transform:rotate(0)}29%{transform:rotate(180deg)}50%{transform:rotate(900deg)}79%{transform:rotate(1080deg)}100%{transform:rotate(360deg)}}
+/* No name strip under the duel Hubies, so they can use the full frame height. */
+html body[data-book="6"] .footballRoster.hkDuelFrame .portraitLayer svg.hubieKit{height:calc(100% - 6px)!important;top:0!important}

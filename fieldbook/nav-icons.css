@@ -1,0 +1,58 @@
+/* Coloured nav marks (nav-icons.js). The base .utilityMark g gesture is switched off for these; each part has its own motion. */
+.navMark{overflow:visible}
+.navMark *{transform-box:fill-box}
+html .navMark g,html .navMark path,html .navMark rect,html .navMark circle{animation:none!important}
+.navMark .nvGlint{transform:translateX(-14px)}
+.navMark .nvSpark,.navMark .nvTw,.navMark .nvRing{opacity:0}
+.navMark .nvPage{opacity:0}
+.navMark .nvLine,.navMark .nvTick,.navMark .nvStar{stroke-dasharray:1;stroke-dashoffset:0}
+
+/* Idle: slow and gentle. Hover / focus / selected: the full gesture, faster. */
+html.iconMotionEnabled .navMark .nvCrown{transform-origin:50% 100%;animation:nvBob 3.2s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvGlint{animation:nvGlint 4.8s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvSpark{transform-origin:center;animation:nvTwinkle 2.4s ease-in-out infinite!important}
+
+html.iconMotionEnabled .navMark .nvPage{transform-origin:50% 0;animation:nvFlip 4.8s ease-in infinite!important}
+html.iconMotionEnabled .navMark .nvDay{transform-origin:center;animation:nvDay 4.8s ease-out infinite!important}
+
+html.iconMotionEnabled .navMark .nvRec{transform-origin:center;animation:nvRec 1.4s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvRing{transform-origin:center;animation:nvRing 1.4s ease-out infinite!important}
+
+html.iconMotionEnabled .navMark .nvSlip{transform-origin:50% 90%;animation:nvTilt 4.6s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvLine{animation:nvWrite 4.6s ease-out infinite!important}
+html.iconMotionEnabled .navMark .nvLine.l2{animation-name:nvWrite2!important}
+html.iconMotionEnabled .navMark .nvLine.l3{animation-name:nvWrite3!important}
+html.iconMotionEnabled .navMark .nvTick{animation:nvTick 4.6s ease-out infinite!important}
+
+html.iconMotionEnabled .navMark .nvStar{animation:nvDraw 4.2s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvTw{transform-origin:center;animation:nvTwinkle 2.1s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvTw.t2{animation-delay:1.05s!important}
+
+html.iconMotionEnabled .navMark .nvFlame{transform-origin:50% 100%;animation:nvFlicker 1.6s ease-in-out infinite!important}
+html.iconMotionEnabled .navMark .nvCore{transform-origin:50% 100%;animation:nvFlicker 1.1s ease-in-out -.4s infinite!important}
+
+/* Livelier when pointed at or selected */
+html.iconMotionEnabled :is(button,a):is(:hover,:focus-visible,.active,[aria-current=true],[aria-current=page],[aria-pressed=true]) .navMark :is(.nvCrown,.nvGlint,.nvSpark,.nvPage,.nvDay,.nvSlip,.nvLine,.nvTick,.nvStar,.nvTw){animation-duration:1.9s!important}
+html.iconMotionEnabled :is(button,a):is(:hover,:focus-visible,.active,[aria-current=true],[aria-current=page],[aria-pressed=true]) .navMark :is(.nvRec,.nvRing){animation-duration:.9s!important}
+html.iconMotionEnabled :is(button,a):is(:hover,:focus-visible) .navMark :is(.nvFlame,.nvCore){animation-duration:.7s!important}
+
+@keyframes nvBob{0%,100%{transform:none}50%{transform:translateY(-1px) rotate(-4deg)}}
+@keyframes nvGlint{0%,55%{transform:translateX(-14px)}85%,100%{transform:translateX(16px)}}
+@keyframes nvTwinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1.15) rotate(45deg)}70%{opacity:0;transform:scale(.4) rotate(90deg)}}
+@keyframes nvFlip{0%,50%{opacity:0;transform:none}52%{opacity:1;transform:none}72%{opacity:1;transform:scaleY(-1.4)}74%,100%{opacity:0;transform:scaleY(-1.4)}}
+@keyframes nvDay{0%,70%{transform:scale(1);fill:#18b39b}78%{transform:scale(1.55);fill:#2fd3bd}88%,100%{transform:scale(1);fill:#18b39b}}
+@keyframes nvRec{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}
+@keyframes nvRing{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2)}}
+@keyframes nvTilt{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg) translateY(-.6px)}}
+@keyframes nvWrite{0%,6%{stroke-dashoffset:1}22%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+@keyframes nvWrite2{0%,20%{stroke-dashoffset:1}38%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+@keyframes nvWrite3{0%,36%{stroke-dashoffset:1}50%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+@keyframes nvTick{0%,52%{stroke-dashoffset:1}62%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+@keyframes nvDraw{0%{stroke-dashoffset:1}45%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-1}}
+@keyframes nvFlicker{0%,100%{transform:scale(1,1) skewX(0)}30%{transform:scale(.96,1.07) skewX(-3deg)}60%{transform:scale(1.03,.95) skewX(2deg)}}
+/* Live broadcast mark: the dot breathes, the arcs pulse outward in turn. */
+html.iconMotionEnabled .navMark .nvWave{animation:nvWave 1.6s ease-out infinite!important}
+html.iconMotionEnabled .navMark .nvWave.w2{animation-delay:.25s!important}
+html.iconMotionEnabled .navMark .nvLive .nvRing{transform-origin:center;transform-box:fill-box;animation:nvHalo 1.6s ease-out infinite!important}
+@keyframes nvWave{0%{opacity:.55}30%{opacity:1}100%{opacity:.55}}
+@keyframes nvHalo{0%{transform:scale(.7);opacity:.45}100%{transform:scale(1.6);opacity:0}}

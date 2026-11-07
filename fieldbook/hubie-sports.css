@@ -1,0 +1,73 @@
+/* Beta v2 sport duels (hubie-sports.js): the ball overlay and each sport's venue behind the two Hubies.
+   Venue photos are assets/generated/bg-<sport>.webp (Gemini, see HUBIE-SPORTS-PROMPTS.md); until one exists the
+   floor colour shows. */
+.hsBall{position:absolute;left:0;top:0;width:20px;height:20px;pointer-events:none;z-index:4;opacity:0;will-change:transform;filter:drop-shadow(0 2px 2px #0008)}
+.hsBall svg{display:block;width:100%;height:100%;overflow:visible}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="tennis"]),html body[data-book="6"] .flightScore:has(svg[data-sport="tennis"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-tennis.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#2a5fa8 47%,#2a5fa8 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="tabletennis"]),html body[data-book="6"] .flightScore:has(svg[data-sport="tabletennis"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-tabletennis.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#1d3a6b 47%,#1d3a6b 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="badminton"]),html body[data-book="6"] .flightScore:has(svg[data-sport="badminton"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-badminton.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#2f7a52 47%,#2f7a52 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="basketball"]),html body[data-book="6"] .flightScore:has(svg[data-sport="basketball"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-basketball.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#b7773d 47%,#b7773d 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="volleyball"]),html body[data-book="6"] .flightScore:has(svg[data-sport="volleyball"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-volleyball.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#c98a3a 47%,#c98a3a 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="handball"]),html body[data-book="6"] .flightScore:has(svg[data-sport="handball"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-handball.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#3b6fb0 47%,#3b6fb0 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="americanfootball"]),html body[data-book="6"] .flightScore:has(svg[data-sport="americanfootball"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-americanfootball.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#2f7d3b 47%,#2f7d3b 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="rugby"]),html body[data-book="6"] .flightScore:has(svg[data-sport="rugby"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-rugby.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#2f7d3b 47%,#2f7d3b 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="aussierules"]),html body[data-book="6"] .flightScore:has(svg[data-sport="aussierules"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-aussierules.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#3f8a3a 47%,#3f8a3a 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="baseball"]),html body[data-book="6"] .flightScore:has(svg[data-sport="baseball"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-baseball.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#3d8a3e 47%,#3d8a3e 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="cricket"]),html body[data-book="6"] .flightScore:has(svg[data-sport="cricket"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-cricket.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#4a8f3f 47%,#4a8f3f 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="icehockey"]),html body[data-book="6"] .flightScore:has(svg[data-sport="icehockey"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-icehockey.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#dfe9ef 47%,#dfe9ef 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="boxing"]),html body[data-book="6"] .flightScore:has(svg[data-sport="boxing"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-boxing.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#2a3b63 47%,#2a3b63 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="mma"]),html body[data-book="6"] .flightScore:has(svg[data-sport="mma"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-mma.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#2b2f3a 47%,#2b2f3a 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="darts"]),html body[data-book="6"] .flightScore:has(svg[data-sport="darts"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-darts.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#1b2a33 47%,#1b2a33 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="golf"]),html body[data-book="6"] .flightScore:has(svg[data-sport="golf"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-golf.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#3a8d43 47%,#3a8d43 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="racing"]),html body[data-book="6"] .flightScore:has(svg[data-sport="racing"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-racing.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#3a3f46 47%,#3a3f46 100%)}
+html body[data-book="6"] .snapCard .snapTeams:has(svg[data-sport="horseracing"]),html body[data-book="6"] .flightScore:has(svg[data-sport="horseracing"]){background:linear-gradient(180deg,#07121acc 0%,#07121a40 32%,#07121a1a 58%,#07121ab3 100%),url(assets/generated/bg-horseracing.webp) center 60%/cover no-repeat,linear-gradient(180deg,#0b1622 0%,#1a2533 46%,#3f7f3a 47%,#3f7f3a 100%)}
+/* Sport icons: hold the first pose; swap to the second pose and show the ball while hovered, focused or selected.
+   !important so the Animations switch wins over the reduced-motion rule for .actionIcon in reference.css, as for the
+   other sport icons. */
+.hsIcon .hsIB,.hsIcon .hsIBall{opacity:0}
+html.iconMotionEnabled :is(button,a):is(:hover,:focus-visible,:active,[aria-pressed=true]) .hsIcon .hsIA,html.iconMotionEnabled .active .hsIcon .hsIA{animation:hs-icon-a 1.1s steps(1) infinite!important}
+html.iconMotionEnabled :is(button,a):is(:hover,:focus-visible,:active,[aria-pressed=true]) .hsIcon :is(.hsIB,.hsIBall),html.iconMotionEnabled .active .hsIcon :is(.hsIB,.hsIBall){animation:hs-icon-b 1.1s steps(1) infinite!important}
+@keyframes hs-icon-a{0%{opacity:1}50%{opacity:0}}
+@keyframes hs-icon-b{0%{opacity:0}50%{opacity:1}}
+/* Middle-of-card props (goal posts for the American football field-goal duel). */
+.hsCentre{position:absolute;left:50%;bottom:16%;width:22%;height:62%;transform:translateX(-50%);pointer-events:none;z-index:0;opacity:.85}
+.hsCentre svg{display:block;width:100%;height:100%}
+/* The away Hubie is mirrored so the two face each other (the drawings all face right). */
+svg.hsDuel.hkSide1{transform:scaleX(-1)}
+.hsSport-darts .hsCentre{bottom:auto;top:-2%;height:56%;width:22%}
+.hsSport-golf .hsCentre{height:46%;width:12%;bottom:6%}
+/* ---- Duel upgrades (Nov 2026) ---- */
+/* Golf hole with flag, Aussie rules posts */
+.hsSport-golf .hsCentre{width:14%;height:46%;bottom:6%;opacity:1}
+.hsSport-aussierules .hsCentre{width:24%;height:70%;bottom:14%;opacity:.95}
+.hsSport-darts .hsCentre{opacity:1}
+/* Boxing: smooth pose changes and lunges */
+.hsSport-boxing svg.hsDuel .hsPose{transition:opacity .11s linear}
+.hsSport-boxing svg.hsDuel .hsBody{transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+/* Racing: cars on the track instead of the drivers */
+.hsSport-racing svg.hsDuel{opacity:0}
+.hsRace{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hsLaneB{position:absolute;inset:0;transform:scaleX(-1)}
+.hsCar{position:absolute;left:26%;top:74%;width:26%;aspect-ratio:100/62;transform:translate(-50%,-50%) scale(1);opacity:1}
+.hsCar svg{position:absolute;inset:0;width:100%;height:100%}
+.hsCar .hsCarFront{opacity:0}
+.hsCarB{left:26%;top:74%;opacity:0}
+.hsRaceGo .hsCar{animation:hsDrive 6s linear infinite}
+.hsRaceGo .hsCar .hsCarRear{animation:hsRear 6s steps(1) infinite}
+.hsRaceGo .hsCar .hsCarFront{animation:hsFront 6s steps(1) infinite}
+.hsRaceGo .hsCarB,.hsRaceGo .hsCarB svg{animation-delay:-3s!important}
+@keyframes hsDrive{
+  0%{left:22%;top:96%;transform:translate(-50%,-50%) scale(1.25);opacity:0}
+  6%{left:27%;top:76%;transform:translate(-50%,-50%) scale(1);opacity:1}
+  40%{left:45%;top:44%;transform:translate(-50%,-50%) scale(.3);opacity:1}
+  50%{left:50%;top:37%;transform:translate(-50%,-50%) scale(.12);opacity:0}
+  56%{left:56%;top:37%;transform:translate(-50%,-50%) scale(.12);opacity:0}
+  64%{left:57%;top:42%;transform:translate(-50%,-50%) scale(.26);opacity:1}
+  94%{left:73%;top:80%;transform:translate(-50%,-50%) scale(1.05);opacity:1}
+  100%{left:76%;top:97%;transform:translate(-50%,-50%) scale(1.25);opacity:0}}
+@keyframes hsRear{0%{opacity:1}53%{opacity:0}100%{opacity:0}}
+@keyframes hsFront{0%{opacity:0}53%{opacity:1}100%{opacity:1}}
+html:not(.iconMotionEnabled) .hsRace *{animation:none!important}
+.hsSport-racing .hkDuelFrame .portraitLayer,.hsSport-racing svg.hsDuel{visibility:hidden!important;opacity:0!important}
+.hsSport-racing .hsRace{z-index:0}
+.hsSport-racing>:not(.hsRace){position:relative;z-index:1}

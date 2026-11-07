@@ -1,0 +1,274 @@
+[data-book="6"]{background:#051115;--a:#bff4ef;--line:#1d353c;font-family:"Segoe UI",Arial,sans-serif}
+.visuallyHidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.refHead{position:sticky;top:0;z-index:6;background:#0b1b20;padding:0 1.2vw}.refHead .demoWallet{display:none}.headCenter{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px}.headCenter span,.headCenter b,.headTools button{background:#102b36;padding:10px;border-radius:6px;font-variant-numeric:tabular-nums}.headCenter b{color:#09272c;background:#bff4ef;font-size:15px;letter-spacing:0}.headTools{display:flex;gap:5px}.headTools button{width:39px}.bookLayout nav{background:#0c1d24}.refToolbar{display:flex;align-items:center;gap:5px;background:#0b1b20;padding:5px 8px;border-radius:5px}.refToolbar>a,.refToolbar button{display:grid;place-items:center;flex:none;background:transparent;border:0;color:#c8d8dd;width:35px;height:37px;padding:2px;font-size:20px}.toolSports{display:flex;border-left:1px solid #304047;padding-left:8px;flex:1;overflow:auto;scrollbar-width:none}.toolSports svg{width:30px;height:30px;filter:saturate(.4)}.refSearch{margin:8px 0}.browseTabs a{border:0;border-radius:6px;background:#0a1c24;font-size:13px;font-weight:650}.bookLayout :is(.browseTabs,nav,.marketTabs) .active{background:#11323d!important;color:#e9fbff!important}.promoArt{position:relative;background:#0c2029;border-radius:7px;overflow:hidden}.promoLink{display:block;border:0;padding:0;width:100%;border-radius:0}.promoLink img{display:block;width:100%;aspect-ratio:4.49;object-fit:cover}.promoControls{position:absolute;right:8px;bottom:3px;display:flex;background:#06161cc9;border-radius:12px}.promoControls button{display:grid;place-items:center;width:24px;height:24px;padding:0;border:0;background:transparent}.promoControls button:after{content:"";width:6px;height:6px;border-radius:50%;background:#78949d}.promoControls button[aria-pressed=true]:after{background:white}
+.snapRail{display:flex;gap:8px;overflow:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:9px 0}.snapCard{flex:0 0 31%;min-width:0;position:relative;background:#0c1c22;padding:10px;border-radius:5px;scroll-snap-align:start}.snapMeta{display:flex;justify-content:space-between;gap:4px;padding-right:18px;align-items:center}.snapMeta small,.snapMeta .badge{font-size:11px}.saveSnap{position:absolute;right:2px;top:4px;border:0;background:none;padding:3px;color:#a4bac3}.snapTeams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin:15px 0 10px}.snapTeams>span{display:grid;justify-items:start;gap:5px;font-size:13px}.snapTeams>span:last-child{text-align:right;justify-items:end}.snapTeams em{background:#263940;padding:3px 6px;font-style:normal;font-weight:700}.snapMarket{display:block;text-align:center;font-size:11px}.snapCard .prices button,.bookLayout .market .prices button{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:6px;background:#11252e;border-color:transparent;border-radius:4px}.snapCard .prices button b,.bookLayout .market .prices button b{color:#e9f3f6}.bookLayout .prices button.chosen b{color:#0d292d}.slateHeading{display:flex;justify-content:space-between;align-items:center}.slateHeading h2{margin:12px 0}.lowerDeck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:25px}.lowerDeck section{background:#0d2027;border-radius:7px;padding:14px}.lowerDeck h2{margin:0 0 10px}.lowerDeck h3{margin:10px 0}.lowerDeck a{display:block;padding:8px 0;color:#c0eee6}.bookLayout .market{background:#0b1c22;border:none;border-radius:5px}.bookLayout .market h3{font-size:15px}.deskFlyout{background:#0e222b;border-radius:6px;padding:0}.deskFlyout header{background:#bff4ef;color:#0b262e;padding:10px}.deskFlyout .flightTabs,.deskFlyout .flightTicket,.deskFlyout .slipReceipt{margin:8px}.deskFlyout .flightTicket{border:0;background:#112731}.deskTicket:has(.deskFlyout) .deskSlipBar{display:none}.deskSlipBar{border-radius:6px 6px 0 0}.stakeChips{display:flex;gap:5px;margin:6px 0}.stakeChips button{flex:1;padding:5px 3px}.reviewQuote{background:#182e35;padding:12px;border-left:3px solid #bff4ef}
+@media(min-width:751px){[data-book="6"] .bookLayout{grid-template-columns:13% minmax(0,1fr);max-width:none}.bookLayout main{width:80%;max-width:1440px;justify-self:center;padding:0 0 110px}.bookLayout nav{top:64px;height:calc(100dvh - 64px);padding:10px}.bookLayout nav a{padding:8px}.bookLayout .sportTrack .actionIcon{width:25px;height:25px}.bookLayout .sportTrack button{min-height:37px;padding:4px 8px;font-size:13px}.bookLayout .fixtureGroup{border:0;border-radius:5px;background:transparent;gap:8px}.bookLayout .fixtureRow{border:0;border-radius:5px}.deskTicket{bottom:0;right:5.4vw}.betsBubble{right:8px;bottom:10px;width:44px;height:44px;overflow:hidden;font-size:0;padding:0;justify-content:center}.betsBubble::before{content:"▤";font-size:20px}.betsBubble b{display:none}.betsDrawer{bottom:65px}}
+@media(max-width:750px), (pointer:coarse) and (orientation:landscape) and (max-width:960px){.headCenter{position:static;transform:none;margin-left:auto}.headCenter span,.headCenter small,.headTools button:first-child{display:none}.headCenter b{font-size:12px}.headTools{margin-left:4px}.snapCard{flex-basis:82%}.promoLink img{min-height:100px}.lowerDeck{grid-template-columns:1fr}.refToolbar{padding:3px;gap:2px}.refToolbar>a,.refToolbar button{width:32px}.bookLayout main{padding-top:6px}.snapCard .prices button{min-height:44px}}
+.headTools{margin-left:auto}.refHead .motionSwitch{order:2;margin-left:6px}.promoControls{left:4px;right:auto;bottom:1px;background:#0a1922}.railDirectory button{height:auto;min-height:36px;line-height:1.15}.snapCard{display:flex;flex-direction:column}.snapTeams{flex:1}.slipReceipt>small{display:block;margin-bottom:7px}
+.marketRule{font-size:13px;color:#bfd3d6;line-height:1.45}.arrivalSlot{height:46px;display:flex;align-items:center}.arrivalSlot button,.arrivalDemo button{font-size:13px;padding:5px 10px}.arrivalDemo{padding:12px 0}.flightTicket .returnDifference{color:#ffdf9b}
+.ticketFixture{margin:10px 0;border:1px solid #35515c;border-radius:8px;padding:9px;background:#10232c}.ticketFixture h4{margin:0 0 6px;color:#d1ede9}.comboLine{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px;align-items:center;padding:7px 0;border-top:1px solid #29414a}.comboLine small,.trackedLeg small{display:block}.comboAlert{grid-column:1/-1;color:#ffdf9b}.trackedLeg{padding:7px 0;border-top:1px solid #28434b}.legStatus{display:block;color:#bceadb}.ticketTrail time{color:#b4c8ce;font-variant-numeric:tabular-nums}.ticketTrail>div{padding:5px 0}.receiptLegs{min-width:0}.removeCombo{min-width:34px}
+.searchHit,.raceLink,.resumeMatch{display:block;padding:10px;background:#122932;border-radius:6px;margin:4px 0}.searchHit small,.comboLine small{display:block}.eventContext,.historyTotals,.draftTools{background:#10272e;padding:10px 14px;border-radius:7px;margin:8px 0}.eventContext button,.draftTools button{margin:4px}.changedCell,.scoreChange{animation:cellUpdate .9s ease-out}.changedPrice{animation:cellUpdate .9s ease-out}@keyframes cellUpdate{from{background:#b3f5da;color:#132b26}to{background:transparent}}@media(prefers-reduced-motion:reduce){.changedCell,.changedPrice,.scoreChange{animation:none}}
+.toolSports button:has(small){width:auto;min-width:45px;display:grid;justify-items:center;font-size:11px;height:auto}.toolSports button small{font-size:10px;white-space:nowrap}.promoControls button:not([aria-pressed]):after{display:none}.promoControls button:not([aria-pressed]){color:white}.compactMode .bookLayout .fixtureGroup{grid-template-columns:1fr}.compactMode .bookLayout .fixtureRow{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.largeType .bookLayout main,.largeType .flightTicket,.largeType .betsDrawer{font-size:1.22rem}.largeType .bookLayout .fixtureGroup{grid-template-columns:1fr}.bookLayout button,.bookLayout a,.trackedLeg{overflow-wrap:anywhere}.eventContext summary,.draftTools summary{cursor:pointer}.periodChip{font-weight:bold}.refHead .headTools button{padding:5px}.refHead .motionSwitch{white-space:nowrap}.bookLayout .toolSports{min-width:0}
+#playerOptions,.pauseDialog{background:#102730;color:white;border:1px solid #3e6672;border-radius:12px;width:min(420px,94vw);max-height:80dvh;padding:18px}#playerOptions::backdrop,.pauseDialog::backdrop{background:#031319ad}#playerOptions label{display:block;margin:10px 0}#playerOptions input[type=checkbox]{width:auto}#playerOptions h3{margin:16px 0 6px}.closeOptions{float:right}.flightSheet[open]{max-height:calc(100dvh - var(--nav-height) - 12px)}
+@media(max-width:750px), (pointer:coarse) and (orientation:landscape) and (max-width:960px){.compactMode .bookLayout .fixtureRow{display:block}.largeType .bookLayout .fixtureRow{display:block}.headTools{gap:2px}.refHead .motionSwitch{font-size:10px}.promoControls button{width:25px}.betsDrawer{overflow:auto}.flightTicket{min-width:0}}
+.flightSheet[open]{max-height:calc(var(--availableHeight,100dvh) - var(--nav-height) - 10px)}.resultToast{position:fixed;z-index:12;bottom:85px;left:10px;max-width:90vw;background:#163d38;color:white;padding:12px;border-radius:7px}.largeType .fixtureSide,.largeType .prices button,.largeType .receiptCell,.largeType .marketRule{font-size:1rem}.largeType .fixtureRow>a{white-space:normal}
+@media(pointer:coarse) and (orientation:landscape) and (max-width:960px){
+body[data-book="6"] .bookLayout{display:block}
+body[data-book="6"] .bookLayout nav{position:fixed;inset:auto 0 0;height:var(--nav-height);width:100%;padding:3px;display:flex;overflow:visible}
+body[data-book="6"] .bookLayout main{width:100%;padding:8px 12px 145px}
+body[data-book="6"] .bookLayout nav .railDirectory,.deskTicket{display:none}
+}
+body[data-book="6"] :is(.snapRail,.sportTrack,.fixtureStrip,.toolSports,.bookLayout nav){scrollbar-width:none}
+body[data-book="6"] :is(.snapRail,.sportTrack,.fixtureStrip,.toolSports,.bookLayout nav)::-webkit-scrollbar{display:none}
+@media(pointer:fine){
+:is(.snapRail,.sportTrack,.fixtureStrip,.toolSports){cursor:grab;user-select:none;scroll-snap-type:none}
+:is(.snapRail,.sportTrack,.fixtureStrip,.toolSports) :is(a,button){cursor:grab}
+.draggingRail,.draggingRail *{cursor:grabbing!important}
+}
+.teamPortrait{position:relative;display:block;width:66px;height:66px;isolation:isolate}
+.teamPortrait :is(.uploadedPlayer,.rCut){position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.teamPortrait .rCut{animation:portraitTurn 3s ease-in-out infinite alternate;transform-origin:center}
+.snapTeams>span:has(.teamPortrait){align-self:end}.snapTeams>span>b .pennant,.snapTeams>span>b .flagBox{font-size:10px}
+.scoreSide .teamPortrait{margin:auto;width:88px;height:88px}
+.still .teamPortrait .rCut{animation:none}
+@media(prefers-reduced-motion:reduce){.teamPortrait .rCut{animation:none}}
+/* Housebets surfaces, shared by all Floodlight routes. */
+:root {
+  --house-page: #060f13;
+  --house-inset: #041015;
+  --house-panel: #0b1920;
+  --house-control: #0d1e27;
+}
+body[data-book="6"] {background:var(--house-page);color-scheme:dark}
+body[data-book="6"] :is(.refHead,.bookLayout nav,.refToolbar,.fixtureGroup>header,.flightSheet[open],.deskFlyout,.betsDrawer,.betsDrawer header) {background:var(--house-panel)}
+body[data-book="6"] :is(.snapCard,.fixtureRow,.lowerDeck section,.market,.flightScore,.historyReceipt,.ticketFixture,.flightTicket,.slipReceipt,.eventContext,.historyTotals,.draftTools,.promoControls) {background:var(--house-panel)}
+body[data-book="6"] :is(.headCenter span,.headTools button,.fixtureStrip a,.snapTeams em,.searchHit,.raceLink,.resumeMatch,.reviewQuote,.flightTicket footer,.sportTrack button,.browseTabs a,.chips button,.flightTabs button,.offerSetting select,.receiptFilters select,.stakeChips button,.prices button,.deskFlyout .flightTicket,.resultToast) {background:var(--house-control)}
+body[data-book="6"] :is(input,select,.promoArt,.dock b,.betsBubble b) {background:var(--house-inset)}
+body[data-book="6"] :is(#sportsPicker,#playerOptions,.pauseDialog) {background:var(--house-panel)}
+body[data-book="6"] :is(.flightTicket .slipState:not(:empty),.conflictBox) {background:var(--house-control)}
+body[data-book="6"] .bookLayout :is(nav,.browseTabs,.marketTabs) .active {background:var(--house-control)!important;box-shadow:inset 0 -2px #a8e9de}
+body[data-book="6"] .prices button.chosen {background:#bff4ef!important;color:var(--house-inset)!important}
+body[data-book="6"] .prices button.chosen :is(b,small) {color:var(--house-inset)}
+body[data-book="6"] :is(.flightTabs,.chips,.sportTrack) button.active {background:var(--house-control)!important;color:#c5f4ee!important;box-shadow:inset 0 -2px #a8e9de}
+
+/* Housebets sport pills. Keep the contact animation inside the icon slot. */
+body[data-book="6"] :is(.sportTrack,.pickerChoices) button[data-sport],body[data-book="6"] .sportBar>.allSports{
+ border:1px solid #22505d;border-radius:999px;background:#060f13;color:#eef8f7;min-height:44px;padding:3px 13px;gap:6px;font:650 15px/1.15 system-ui,sans-serif}
+body[data-book="6"] .sportTrack{gap:8px}
+body[data-book="6"] :is(.sportTrack,.pickerChoices) button[data-sport] .actionIcon{flex:none;width:36px;height:29px}
+body[data-book="6"] :is(.sportTrack,.pickerChoices) button[data-sport]:is(.active,[aria-pressed=true]),body[data-book="6"] .allSports[aria-pressed=true]{background:#10303a!important;color:#c4f4ef!important;box-shadow:none;border-color:#39747e}
+body[data-book="6"] :is(.sportTrack,.pickerChoices) button[data-sport]:is(:hover,:focus-visible){border-color:#65adaf}
+#sportsPicker .pickerChoices{display:flex;flex-wrap:wrap;gap:6px}
+.actionIcon :is(.swing,.reach,.shot,.seal){transform-box:fill-box;transform-origin:center}
+.actionIcon .swing{transform-origin:20% 90%}.actionIcon .flash{opacity:0}
+button:is(:hover,:focus-visible,:active,[aria-pressed=true]) .actionIcon .swing{animation:pillStrike 1.6s ease-in-out infinite}
+button:is(:hover,:focus-visible,:active,[aria-pressed=true]) .actionIcon .shot{animation:pillShot 1.6s ease-out infinite}
+button:is(:hover,:focus-visible,:active,[aria-pressed=true]) .actionIcon .reach{animation:pillReach 1.6s ease-in-out infinite}
+button:is(:hover,:focus-visible,:active,[aria-pressed=true]) .actionIcon .seal{animation:pillGlow 2s ease-in-out infinite}
+button:is(:hover,:focus-visible,:active,[aria-pressed=true]) .actionIcon .flash{animation:pillFlash 1.6s steps(1,end) infinite}
+.shooter g:nth-child(2) .flash{animation-delay:-.7s!important}
+@keyframes pillStrike{0%,85%,100%{transform:none}25%{transform:rotate(-22deg)}40%,54%{transform:rotate(9deg)}}
+@keyframes pillShot{0%,38%{transform:none;opacity:1}55%{transform:var(--mid)}76%{transform:var(--finish);opacity:1}84%,87%{transform:var(--finish);opacity:0}88%{transform:none;opacity:0}100%{opacity:1}}
+@keyframes pillReach{0%,38%,100%{transform:none}55%{transform:translate(10px,-4px)}72%{transform:translate(9px,1px)}}
+@keyframes pillGlow{50%{filter:drop-shadow(0 0 2px currentColor);transform:scale(1.04)}}
+@keyframes pillFlash{28%,45%{opacity:1}0%,35%,54%,100%{opacity:0}}
+html.still .actionIcon *,html.still .actionIcon{animation:none!important}
+@media(prefers-reduced-motion:reduce){.actionIcon *,.actionIcon{animation:none!important}}
+.refToolbar{gap:2px;padding:5px 8px}
+.refToolbar>a,.refToolbar button{width:44px;height:46px;color:#96a6b4;border-radius:9px}
+.utilityMark{width:24px;height:24px;display:block;margin:auto}
+.refToolbar .toolSports{gap:2px;align-items:center;margin-left:5px}
+.refToolbar .toolSports .actionIcon{width:36px;height:30px;filter:grayscale(1);opacity:.74}
+.refToolbar :is(a,button):is(:hover,:focus-visible,[aria-current=page],[aria-pressed=true]){background:#0d1e27;color:#eafaf7}
+.refToolbar .toolSports button:is(:hover,:focus-visible,[aria-pressed=true]) svg{filter:none;opacity:1}
+.refToolbar :is(a,button):focus-visible{outline:2px solid #9ee8d9;outline-offset:-2px}
+.headTools .utilityMark{width:21px;height:21px}
+@media(max-width:750px){.refToolbar{padding:2px;gap:0}.refToolbar>a,.refToolbar>button{width:34px;min-height:44px}.refToolbar .toolSports{padding-left:3px;margin-left:2px}}
+
+/* Each visible row plays short, staggered actions even without a pointer. */
+@media (prefers-reduced-motion:no-preference){
+ html:not(.still) :is(.toolSports,.sportTrack,.pickerChoices,.railDirectory) button:nth-child(4n+1){--beat:-.8s}
+ html:not(.still) :is(.toolSports,.sportTrack,.pickerChoices,.railDirectory) button:nth-child(4n+2){--beat:-2.25s}
+ html:not(.still) :is(.toolSports,.sportTrack,.pickerChoices,.railDirectory) button:nth-child(4n+3){--beat:-3.7s}
+ .shot{--action:pillShot}.reach{--action:pillReach}.seal{--action:pillGlow}.flash{--action:pillFlash}.swing{--action:pillStrike}.sportScene .actProp{--action:playSportScene}
+ html:not(.still) :is(.toolSports,.sportTrack,.pickerChoices,.railDirectory) button:not(:is(:hover,:focus-visible,:active,[aria-pressed=true],.active)) .actionIcon :is(.shot,.reach,.seal,.flash,.swing,.actProp){
+  animation:var(--action) 5s linear(0,1 34%,1) var(--beat,0s) infinite;
+ }
+ html:not(.still) button[aria-pressed=true] .sportScene .actProp{animation:playSportScene 1.45s ease-in-out infinite}
+ .utilityMark g{transform-box:fill-box;transform-origin:center}
+ .mark-home{--gesture:homeLift}.mark-live{--gesture:livePulse}.mark-favorites{--gesture:starTurn}.mark-bets{--gesture:ticketLift}.mark-search{--gesture:lensScan}
+ html:not(.still) .utilityMark g{animation:var(--gesture) 5.6s ease-in-out var(--offset,0s) infinite}
+ .mark-search{--offset:-2.7s}.mark-live{--offset:-1.2s}.mark-favorites{--offset:-3.8s}.mark-bets{--offset:-4.6s}
+ html:not(.still) :is(button,a):is(:hover,:focus-visible,:active) .utilityMark g{animation-duration:1.7s;animation-delay:0s}
+}
+@keyframes homeLift{12%{transform:translateY(-1.8px)}0%,26%,100%{transform:none}}
+@keyframes livePulse{13%{opacity:.58;transform:scale(.93)}0%,28%,100%{opacity:1;transform:none}}
+@keyframes starTurn{12%{transform:rotate(13deg) scale(.94)}22%{transform:rotate(-6deg)}0%,32%,100%{transform:none}}
+@keyframes ticketLift{14%{transform:translateY(-1.6px) rotate(-6deg)}0%,30%,100%{transform:none}}
+@keyframes lensScan{10%{transform:translate(-1.6px,1px)}22%{transform:translate(1.5px,-1px)}0%,34%,100%{transform:none}}
+/* The named sport rail is the single sport filter. Give the action room to read. */
+body[data-book="6"] :is(.sportTrack,.pickerChoices) button[data-sport] .actionIcon{width:46px;height:34px}
+.sportTrack.iconsOnly button span{display:none}
+body[data-book="6"] .headTools button:first-child{display:grid;place-items:center}
+@media(prefers-reduced-motion:no-preference){
+ html:not(.still) :is(.sportTrack,.pickerChoices,.railDirectory) button:is(:hover,:focus-visible,:active,[aria-pressed=true]) .actionIcon :is(.swing,.shot,.reach,.actProp,.seal,.flash){
+  animation:var(--action) 1.08s ease-in-out -.22s infinite;
+ }
+ html:not(.still) :is(.sportTrack,.pickerChoices,.railDirectory) button:is(:hover,:focus-visible) .actionIcon{scale:1.09}
+}
+.directoryTrigger{display:none}
+.bookLayout .railDirectory button{min-height:42px;padding:3px 7px;border-radius:8px}
+.bookLayout .railDirectory .actionIcon{width:40px;height:30px;flex:none}
+.bookLayout .railDirectory button:is(:hover,:focus-visible,[aria-pressed=true]){background:#0d1e27;color:#bff4ef}
+.railDirectory.iconsOnly button:has(svg) span{display:none}
+@media(max-width:750px),(pointer:coarse) and (orientation:landscape) and (max-width:960px){
+ .bookLayout .directoryTrigger{display:block;margin-left:auto;min-height:44px}
+ body[data-book="6"] .bookLayout nav.directoryOpen .railDirectory{display:block;position:absolute;bottom:100%;left:0;width:min(320px,92vw);max-height:65dvh;overflow-y:auto;background:#0b1920;border:1px solid #22505d;padding:10px}
+}
+
+/* Product selection and sport filters have separate visual weights. */
+body[data-book="6"] .bookLayout .productSwitch{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:0;padding:3px;background:#041015;border:1px solid #29505c;border-radius:12px}
+body[data-book="6"] .bookLayout .productSwitch a{display:grid;place-items:center;min-height:36px;padding:4px 6px;border:0;border-radius:9px;color:#acc1c5;font:650 14px/1.2 system-ui,sans-serif}
+body[data-book="6"] .bookLayout .productSwitch a.active{background:#0d1e27!important;color:#c5f4ee!important;box-shadow:inset 0 -2px #8dd9d1}
+body[data-book="6"] #sideSports button{background:#0d1e27;border:1px solid #24434d;border-radius:999px;margin:4px 0;padding:3px 10px;min-height:42px}
+body[data-book="6"] #sideSports button:is(:hover,:focus-visible){border-color:#6fa5a8}
+body[data-book="6"] #sideSports button[aria-pressed=true]{background:#10303a;color:#c4f4ef;border-color:#5b9b9e}
+#sideSports small{width:fit-content;background:#0d1e27;border-radius:7px;padding:4px 8px;color:#b6cccf;font:650 12px/1.3 system-ui,sans-serif}
+.refHead .sidebarToggle{display:grid;place-items:center;flex:none;width:36px;height:36px;padding:7px;border:1px solid #294953;border-radius:8px;background:#0d1e27;color:#c2dedf}
+.sidebarToggle svg{width:20px;height:20px}
+.sidebarHidden .sidebarToggle svg{transform:scaleX(-1)}
+@media(min-width:751px){
+ html.sidebarHidden body[data-book="6"] .bookLayout{grid-template-columns:minmax(0,1fr)}
+ html.sidebarHidden #productSidebar{display:none}
+}
+@media(max-width:750px),(pointer:coarse) and (orientation:landscape) and (max-width:960px){
+ .refHead .sidebarToggle{display:none}
+ html.sidebarHidden body[data-book="6"] #productSidebar{display:flex}
+ .bookLayout .productSwitch{min-width:134px}
+}
+.sideLinks{border-bottom:1px solid #25434c;margin-bottom:10px;padding-bottom:8px}
+body[data-book="6"] #sideSports .sideLinks :is(a,button){display:flex;align-items:center;gap:8px;width:100%;min-height:39px;border:0;border-radius:7px;padding:5px 7px;margin:2px 0;color:#e5f1ef;background:#0b1920;text-align:left;font:600 14px system-ui}
+.sideLinks .utilityMark,.browseTabs .utilityMark{width:20px;height:20px;margin:0;flex:none}
+.sideLinks b{margin-left:auto;font-size:10px;color:#c0e8dc}
+body[data-book="6"] #sideSports .sideLinks :is(a,button):is(:hover,:focus-visible,.active){background:#0d1e27;color:#bff4ef}
+.productSwitch .utilityMark{display:none}
+body[data-book="6"] .bookLayout .browseTabs a{display:inline-flex;align-items:center;gap:6px;border:1px solid #254953;border-radius:24px;min-height:44px;padding:6px 14px;font:650 15px system-ui}
+.browseTabs{justify-content:center}
+#profileMenu,#accountCard,#supportChat{color:#eff8f6;background:#0b1920;border:1px solid #33515b;border-radius:12px;padding:14px;box-shadow:0 10px 32px #0007}
+#profileMenu{position:fixed;inset:60px 10px auto auto;margin:0;width:215px;max-height:78dvh;overflow:auto}
+#profileMenu strong,#profileMenu small{display:block;margin-bottom:7px}
+#profileMenu button{display:block;width:100%;text-align:left;background:transparent;border:0;padding:7px;color:inherit}
+#profileMenu button:is(:hover,:focus-visible){background:#0d1e27}
+#accountCard::backdrop{background:#041015bb}
+#supportChat{position:fixed;z-index:15;right:10px;top:68px;width:min(330px,calc(100vw - 20px));max-height:65dvh;overflow:auto}
+#supportChat header,#supportChat form{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#supportChat input{min-width:0;flex:1}
+#supportChat [role=log]{max-height:36dvh;overflow:auto;overflow-wrap:anywhere}
+@media(min-width:751px){
+ html.sidebarHidden body[data-book="6"] .bookLayout{grid-template-columns:68px minmax(0,1fr)}
+ html.sidebarHidden body[data-book="6"] #productSidebar{display:block;padding:6px}
+ .sidebarHidden #productSidebar .productSwitch{grid-template-columns:1fr}
+ .sidebarHidden #productSidebar .productSwitch svg{display:block}
+ .sidebarHidden #productSidebar :is(.productSwitch,.railDirectory) :is(span,small,b){display:none}
+ .sidebarHidden #productSidebar #sideSports :is(a,button){justify-content:center;padding-inline:2px}
+}
+@media(max-width:750px),(pointer:coarse) and (orientation:landscape) and (max-width:960px){
+ body[data-book="6"] .bookLayout .browseTabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto}
+ body[data-book="6"] .bookLayout .browseTabs a{padding:5px 8px;font-size:13px;white-space:nowrap}
+ .refHead .bookBrand img{max-width:88px}
+ .refHead .headTools button{width:30px;padding:3px}
+ .refHead .motionSwitch{padding:4px}
+ html.sidebarHidden body[data-book="6"] #productSidebar{display:flex}
+ html.sidebarHidden body[data-book="6"] #productSidebar .productSwitch{grid-template-columns:1fr 1fr}
+ html.sidebarHidden #productSidebar .productSwitch svg{display:none}
+ html.sidebarHidden #productSidebar :is(.productSwitch,.railDirectory) :is(span,small,b){display:revert}
+}
+#supportChat{display:block}
+
+/* A new animation name on entry restarts the gesture even mid-idle-loop.
+   The motion preference includes the player's explicit Motion on/off setting. */
+.actionIcon .swing{--hover-action:hitWindup}
+.actionIcon .shot,.sportScene .actProp{--hover-action:hitTravel}
+.actionIcon .reach{--hover-action:dunkReach}
+.actionIcon .seal{--hover-action:emblemLight}
+.actionIcon .flash{--hover-action:muzzleLight}
+@keyframes hitWindup{0%{transform:rotate(-28deg)}30%{transform:rotate(15deg)}60%,100%{transform:none}}
+@keyframes hitTravel{0%{transform:none}30%{transform:var(--mid)}64%{transform:var(--finish);opacity:1}74%,80%{transform:var(--finish);opacity:0}81%{transform:none;opacity:0}100%{transform:none;opacity:1}}
+@keyframes dunkReach{0%{transform:none}30%{transform:translate(10px,-4px)}58%{transform:translate(10px,3px)}82%,100%{transform:none}}
+@keyframes emblemLight{0%,100%{transform:none}42%{transform:scale(1.12);filter:drop-shadow(0 0 3px currentColor) brightness(1.4)}}
+@keyframes muzzleLight{0%,20%,42%,100%{opacity:0}8%,34%{opacity:1}}
+html.iconMotionEnabled:not(.still) :is(.railDirectory,.sportTrack) button:is(:hover,:focus-visible,:active) .actionIcon :is(.swing,.shot,.actProp,.reach,.seal,.flash){
+ animation:var(--hover-action) 1s ease-out infinite!important;
+}
+.mark-popular{--gesture:starTurn}.mark-upcoming,.mark-profile,.mark-support{--gesture:homeLift}
+#sideSports .sportsHeading{display:flex;align-items:center;justify-content:space-between;gap:4px;margin:6px 0 3px}
+.sportsHeading strong{font:750 15px system-ui;color:#eff7f6}
+body[data-book="6"] #sideSports .sportsHeading button{width:auto;min-height:32px;margin:0;padding:3px 9px;font:700 12px system-ui}
+.sportsHeading button .utilityMark{display:none}
+button:has(>.contactReplay)>.contactPlay{display:none}
+.contactReplay{display:block;pointer-events:none;flex:none;width:50px;height:37px;object-fit:contain}
+@media(min-width:751px){
+ .sidebarHidden .sportsHeading strong{display:none}
+ .sidebarHidden #sideSports .sportsHeading button{width:100%}
+ .sidebarHidden .sportsHeading button .utilityMark{display:block}
+}
+body[data-book="6"] :is(#sideSports,.sportTrack) button[data-sport] .contactPlay{width:50px;height:37px}
+#supportLauncher{position:fixed;right:10px;bottom:10px;z-index:8;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid #398787;background:#277d80;color:#efffff}
+#supportLauncher svg{width:22px;height:22px}
+body[data-book="6"] .betsBubble{right:64px}
+body[data-book="6"] .deskTicket{right:120px}
+#communityChat{display:flex;flex-direction:column;position:fixed;right:12px;top:68px;width:min(300px,calc(100vw - 24px));max-height:calc(100dvh - 148px);overflow:auto;z-index:11;border:1px solid #284650;border-radius:13px;background:#060f13;color:#ebf7f7;padding:0}
+#communityChat header,.radioRow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 14px;background:#0b1920}
+#communityChat h2,#supportChat h2{margin:0}
+#communityChat header button,.closeHelp{font-size:20px}
+.radioRow{border-block:1px solid #24434d;background:#041015}
+.radioRow>b{color:#67e4d9;font-size:24px}.radioRow>div{flex:1}.radioRow small{display:block}
+.roomFeed,.roomLock{padding:12px}.roomFeed{overflow:auto;min-height:75px}
+.roomFeed p{background:#0d1e27;padding:9px;border-radius:8px;margin:6px 0;font-size:14px}
+.roomFeed b{color:#b9eee4}.roomLock{border-top:1px solid #284650}.roomLock summary{cursor:pointer;font-weight:bold}.roomLock label,.roomLock progress{display:block;width:100%}.roomLock label{margin:8px 0}
+#supportChat{display:flex;flex-direction:column;position:fixed;top:auto;bottom:65px;right:10px;padding:0;width:min(365px,calc(100vw - 20px));height:min(530px,calc(100dvh - 95px));max-height:none;overflow:hidden;color:#162528;background:#f7f9f8;border-radius:18px}
+.helpHero{position:relative;flex:none;padding:20px;background:linear-gradient(130deg,#0b1920,#14404a);color:white}
+.helpHero strong{font-size:21px}.helpHero h2{padding-top:20px;font-size:24px;line-height:1.15}.helpHero .closeHelp{position:absolute;right:12px;top:12px;color:white;background:transparent}
+.helpBody{flex:1;min-height:0;overflow:auto;padding:12px}
+.helpBody>button,.helpBody details{display:block;width:100%;background:white;color:#18292d;border:1px solid #dbe4e3;border-radius:10px;text-align:left;padding:12px;margin:0 0 8px}
+.helpBody summary{cursor:pointer;font-weight:650}.helpBody input{width:100%;padding:10px}.helpBody #helpResults{margin-top:8px}
+#supportChat footer{display:flex;background:white;border-top:1px solid #dbe4e3}
+#supportChat footer button{flex:1;border:0;background:white;color:#526564}
+#supportChat footer button[aria-pressed=true]{color:#136d70;font-weight:bold}
+#supportChat footer span{display:block}
+@media(min-width:1080px){.communityOpen .bookLayout{padding-right:320px}}
+@media(max-width:750px),(pointer:coarse) and (orientation:landscape) and (max-width:960px){
+ #supportLauncher{bottom:calc(var(--nav-height) + 7px);width:42px;height:42px;right:6px}
+ body[data-book="6"] .betsBubble{right:54px}
+ body:has(.dock) #supportLauncher{bottom:calc(var(--nav-height) + 65px)}
+ #supportChat{bottom:calc(var(--nav-height) + 6px);height:min(510px,calc(100dvh - var(--nav-height) - 18px));z-index:16}
+ #communityChat{max-height:calc(100dvh - var(--nav-height) - 90px)}
+}
+.rosterPortrait{display:inline-grid;position:relative;isolation:isolate;width:74px;height:83px;vertical-align:middle;flex:none}
+.scoreSide .rosterPortrait{width:104px;height:112px;margin:auto}
+.rosterPortrait .portraitLayer,.rosterPortrait .portraitFallback{position:absolute;inset:0;display:grid;place-items:center}
+.rosterPortrait .portraitLayer{opacity:0;transition:opacity .42s ease;pointer-events:none}
+.rosterPortrait .portraitLayer.shown{opacity:1}
+.rosterPortrait .portraitLayer[hidden],.rosterPortrait:has(.portraitLayer.shown:not([hidden])) .portraitFallback{display:none}
+.rosterPortrait .portraitLayer :is(img,svg){position:absolute;inset:0;width:100%;height:calc(100% - 16px);object-fit:contain;transform-origin:50% 65%;animation:rosterTurn 3s ease-in-out infinite alternate}
+.rosterPortrait .portraitLayer .portraitName{position:absolute;bottom:0;left:0;right:0;display:block;font:600 10px/15px system-ui;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#c6e8df}
+@keyframes rosterTurn{from{transform:perspective(350px) rotateY(-9deg)}to{transform:perspective(350px) rotateY(9deg)}}
+.still .portraitLayer :is(img,svg){animation:none}
+@media(prefers-reduced-motion:reduce){.rosterPortrait .portraitLayer :is(img,svg){animation:none}.rosterPortrait .portraitLayer{transition:none}}
+
+.scoreSide .rosterPortrait{width:min(100%,166px);height:clamp(132px,13vw,182px)}
+.scoreSide .rosterPortrait .portraitName{color:#efffff;font:700 clamp(13px,1vw,16px)/21px system-ui;letter-spacing:0}
+.scoreSide .portraitLayer :is(img,svg){height:calc(100% - 23px)}
+.snapTeams .rosterPortrait .portraitName{font-size:12px}
+
+.still .rosterPortrait .portraitLayer{transition:none}
+
+.competitionBubbles{display:flex;gap:7px;flex-wrap:wrap;margin:5px 0 12px}
+.competitionBubbles button{min-height:35px;padding:5px 12px;border:1px solid #31505c;background:#0b1920;color:#e5f3f4;border-radius:22px}
+.competitionBubbles button[aria-pressed=true]{background:#143942;border-color:#7ccac6;color:white}
+.competitionBubbles small{font-variant-numeric:tabular-nums;color:#b2ccce}
+.snapTeams .rosterPortrait{width:min(100%,118px);height:124px}
+.snapTeams .rosterPortrait .portraitName{font-size:13px;color:#ecfaf9}
+@media(prefers-reduced-motion:no-preference){
+ html:not(.still) .rosterPortrait .portraitLayer{transform:perspective(500px) rotateY(-20deg);transition:opacity .95s ease-in-out,transform .95s ease-in-out}
+ html:not(.still) .rosterPortrait .portraitLayer.shown{transform:perspective(500px) rotateY(0deg)}
+}

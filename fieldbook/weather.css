@@ -1,0 +1,56 @@
+/* Match weather (weather.js) */
+html body[data-book="6"] .flightScore.wxOn{position:relative;overflow:hidden}
+.wxFx{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;border-radius:inherit}
+.flightScore.wxOn>*:not(.wxFx){position:relative;z-index:2}
+.wxFx i{position:absolute;inset:0;display:block}
+/* Rain: two layers of diagonal streaks */
+.wxRain{inset:-40% -10% 0 -10%!important;background-image:repeating-linear-gradient(105deg,transparent 0 22px,#cfe9ff55 22px 23px,transparent 23px 47px);background-size:120px 120px;animation:wxFall .55s linear infinite;opacity:.75}
+.wxRain2{background-image:repeating-linear-gradient(105deg,transparent 0 35px,#ffffff40 35px 36px,transparent 36px 71px);background-size:180px 180px;animation-duration:.8s;opacity:.55}
+.wxLight{opacity:.35}
+@keyframes wxFall{from{transform:translateY(0)}to{transform:translateY(120px)}}
+.wx-rain,.wx-storm,.wx-drizzle{background:linear-gradient(180deg,#0b1a2acc,#0b1a2a33 60%,transparent)}
+.wxFlash{background:#fff;opacity:0;animation:wxFlash 7s infinite}
+@keyframes wxFlash{0%,91%,95%,100%{opacity:0}92%{opacity:.45}93%{opacity:.08}94%{opacity:.35}}
+/* Snow */
+.wxSnow{inset:-100% 0 0 0!important;background-image:radial-gradient(2.5px 2.5px at 20px 30px,#fff,transparent),radial-gradient(2px 2px at 80px 70px,#fffd,transparent),radial-gradient(3px 3px at 140px 20px,#fff,transparent),radial-gradient(2px 2px at 200px 90px,#fffc,transparent);background-size:240px 120px;animation:wxSnow 6s linear infinite}
+.wxSnow2{background-size:170px 90px;animation-duration:9s;opacity:.7}
+@keyframes wxSnow{from{transform:translate(0,0)}to{transform:translate(-30px,50%)}}
+.wx-snow{background:linear-gradient(180deg,#dfeaf555,transparent 70%)}
+/* Fog / clouds */
+.wxFog{background:linear-gradient(90deg,transparent,#d8e4e866 30%,#d8e4e844 60%,transparent);background-size:200% 100%;animation:wxDrift 14s linear infinite;filter:blur(6px)}
+.wxCloud{inset:0 -50% auto -50%!important;height:45%;background:radial-gradient(closest-side,#e8f1f455,transparent) 10% 30%/320px 120px no-repeat,radial-gradient(closest-side,#e8f1f444,transparent) 55% 10%/420px 140px no-repeat,radial-gradient(closest-side,#e8f1f43a,transparent) 85% 40%/300px 110px no-repeat;animation:wxDrift 40s linear infinite}
+@keyframes wxDrift{from{transform:translateX(0)}to{transform:translateX(25%)}}
+.wx-cloud,.wx-fog{background:linear-gradient(180deg,#5c6b7266,transparent 70%)}
+/* Sun (day) / moon and stars (night) */
+.wxSun{background:radial-gradient(circle at 82% 8%,#fff6c8 0,#ffd76acc 6%,#ffb84d55 18%,transparent 42%);animation:wxGlow 6s ease-in-out infinite alternate}
+.wxSun::after{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;background:repeating-conic-gradient(from 0deg,#fff3c022 0 6deg,transparent 6deg 18deg);border-radius:50%;animation:wxSpin 60s linear infinite;mask:radial-gradient(circle,#000 20%,transparent 70%)}
+@keyframes wxGlow{from{opacity:.75}to{opacity:1}}
+@keyframes wxSpin{to{transform:rotate(360deg)}}
+.wxMoon{background:radial-gradient(circle at 84% 12%,#f4f1df 0 18px,#f4f1df55 19px,transparent 70px)}
+.wxStars{background-image:radial-gradient(1.5px 1.5px at 10% 15%,#fff,transparent),radial-gradient(1px 1px at 30% 8%,#fff,transparent),radial-gradient(1.5px 1.5px at 55% 20%,#fff,transparent),radial-gradient(1px 1px at 70% 6%,#fff,transparent),radial-gradient(1px 1px at 45% 12%,#fff,transparent);animation:wxTwinkle 3s ease-in-out infinite alternate}
+@keyframes wxTwinkle{from{opacity:.4}to{opacity:1}}
+.wxNight{background:linear-gradient(180deg,#050c1a99,transparent 60%)}
+html:not(.iconMotionEnabled) .wxFx *,html:not(.iconMotionEnabled) .wxFx *::after{animation:none!important}
+/* Chip and venue */
+.wxChip{position:absolute!important;top:12px;right:14px;z-index:3!important;display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid #ffffff33;border-radius:14px;background:#07161bcc;backdrop-filter:blur(6px);color:#fff;box-shadow:0 8px 20px #0007}
+.wxIcon{font-size:26px;line-height:1}
+.wxChip>span:nth-child(2){display:grid;gap:2px}
+.wxChip b{font:800 18px/1 "Bahnschrift","Segoe UI",sans-serif}
+.wxChip small{color:#cfe9ea;font:600 11.5px/1.1 "Segoe UI",sans-serif}
+.wxMore{display:grid;gap:3px;padding-left:10px;border-left:1px solid #ffffff22}
+.wxVenue{position:absolute!important;top:14px;left:16px;z-index:3!important;padding:5px 10px;border-radius:999px;background:#07161bb3;color:#e6f6f3;font:600 12px/1 "Segoe UI",sans-serif}
+.wxMini{padding:3px 7px;border-radius:999px;background:#0a1c22;border:1px solid #2f5b62;color:#e6f6f3;font:700 11.5px/1 "Bahnschrift","Segoe UI",sans-serif;white-space:nowrap}
+@media(max-width:750px){.wxChip{top:auto;bottom:10px;right:10px;padding:6px 9px}.wxMore{display:none}.wxVenue{display:none}}
+/* ---- Rain v2: individual drops, splashes, mist, wind sheets ---- */
+.wxDrops{transform:skewX(-12deg);transform-origin:top}
+.wxDrops b{position:absolute;top:-60px;width:var(--w);height:var(--len);border-radius:0 0 2px 2px;background:linear-gradient(180deg,transparent,#e4f2ff 70%,#ffffff);opacity:var(--op);animation:wxDrop var(--dur) linear var(--del) infinite;will-change:transform}
+@keyframes wxDrop{from{transform:translateY(0)}to{transform:translateY(calc(100cqh + 80px))}}
+.wxFx{container-type:size}
+.wxSplash b{position:absolute;width:14px;height:4px;margin-left:-7px;border-radius:50%;border:1px solid #e8f4ffaa;opacity:0;animation:wxSplash var(--dur) ease-out var(--del) infinite}
+@keyframes wxSplash{0%,55%{transform:scale(.2);opacity:0}62%{opacity:.9}100%{transform:scale(1.6,1.2);opacity:0}}
+.wxMist{inset:auto 0 0 0!important;height:45%;background:linear-gradient(0deg,#c8d8e044,transparent);filter:blur(4px)}
+.wxSheet{inset:-20% -30%!important;background:repeating-linear-gradient(100deg,transparent 0 140px,#ffffff10 140px 220px,transparent 220px 380px);animation:wxSheet 3.5s linear infinite;mix-blend-mode:screen}
+@keyframes wxSheet{from{transform:translateX(-10%)}to{transform:translateX(10%)}}
+.wxLight b{opacity:calc(var(--op) * .7)}
+.wx-rain,.wx-storm,.wx-drizzle{background:linear-gradient(180deg,#08142acc,#0b1a2a66 55%,#0b1a2a33)}
+.wx-drizzle{background:linear-gradient(180deg,#0b1a2a99,transparent 70%)}

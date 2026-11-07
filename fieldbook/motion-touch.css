@@ -1,0 +1,15 @@
+/* Touch screens have no hover. Instead of looping, icons play once when they become selected
+   (the tapped tab, sport or page) and then rest; everything else stays still. The logo plays a few times then rests.
+   :not(#a):not(#b) only raises specificity above the generated !important animation rules. */
+@media(hover:none){
+  html.iconMotionEnabled:not(#a):not(#b) :is(.motionIcon,.navMark) *{animation-iteration-count:1!important}
+  html.iconMotionEnabled:not(#a):not(#b) .brandHubie .motionIcon *{animation-iteration-count:3!important}
+  html.iconMotionEnabled:not(#a):not(#b) :is(a,button):not(.active,[aria-current],[aria-pressed=true]) .navMark *{animation:none!important}
+  /* Selected nav icon: a single, full-speed play on arrival */
+  html.iconMotionEnabled:not(#a):not(#b) :is(a,button):is(.active,[aria-current],[aria-pressed=true]) .navMark *{animation-duration:1.6s!important}
+}
+
+/* Animations switch in the profile menu (motion-menu.js) */
+#profileMenu .pmMotion{display:flex!important;justify-content:space-between;align-items:center}
+#profileMenu .pmMotion span{padding:2px 9px;border-radius:999px;background:#24464e;color:#cfe9ea;font-size:11px;font-weight:700}
+#profileMenu .pmMotion[aria-checked=true] span{background:#9fe8d8;color:#08242a}
