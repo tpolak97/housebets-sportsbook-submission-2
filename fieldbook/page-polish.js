@@ -42,6 +42,8 @@ const slate = () => {
   const groups = [];
   for (let el = head.nextElementSibling; el && el.matches('.fixtureGroup'); el = el.nextElementSibling) groups.push(el);
   if (!groups.length) return;
+  const liveHeader = groups.find(g => g.classList.contains('ffGroupLive'))?.querySelector(':scope > header');
+  if (a && liveHeader) liveHeader.append(a);
   const wrap = document.createElement('div');
   wrap.className = 'slateGrid';
   groups[0].before(wrap);

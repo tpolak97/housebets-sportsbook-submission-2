@@ -51,6 +51,7 @@ html body[data-book="6"] .liveBubble{display:inline-flex;align-items:center;gap:
 html body[data-book="6"] .liveBubble:is(:hover,:focus-visible){border-color:#ff6b6b;background:linear-gradient(180deg,#3a1a1f,#24111a)}
 html body[data-book="6"] .liveBubble .navMark{width:22px;height:22px}
 html body[data-book="6"] .liveBubble b{min-width:22px;padding:3px 7px;border-radius:999px;background:#ff3b3b;color:#fff;font-size:12px;text-align:center}
+html body[data-book="6"] .slateGrid>.ffGroupLive>header .liveBubble{flex:none;margin-left:auto;white-space:nowrap}
 /* Home sections under the heading: a grid, so one-match "Live now" and "Upcoming" sit side by side. */
 html body[data-book="6"] .slateGrid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 html body[data-book="6"] .slateGrid>.fixtureGroup{margin:0}
